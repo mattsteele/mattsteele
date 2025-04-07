@@ -1,5 +1,57 @@
-/* Global variables */
+
+@import 'tailwindcss';
+
 :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-blue-one: #1e2e3e;
+  --color-blue-two: #507796;
+  --color-blue-three: #2a94c8;
+  --color-blue-four: #1e2e3e;
+  --color-blue-five: #005b96;
+
+  --color-red-one: #b33d40;
+  --color-red-two: #d1625b;
+
+  --color-gray-one: #e0e0e0;
+  --color-gray-two: #bdc3c7;
+  --color-gray-three: #eceeef;
+
+  /* #f7f7f9 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+ /* KEEP ABOVE THIS LINE */
+
+/* Global variables */
+@theme {
 	/* Colors */
 	--gray-0: #090b11;
 	--gray-50: #141925;
@@ -15,6 +67,19 @@
 	--gray-999-basis: 0, 0%, 100%;
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
 	--gray-999: #ffffff;
+
+	--blue-one: #1e2e3e;
+  --blue-two: #507796;
+  --blue-three: #2a94c8;
+  --blue-four: #1e2e3e;
+  --blue-five: #005b96;
+
+  --red-one: #b33d40;
+  --red-two: #d1625b;
+
+  --gray-one: #e0e0e0;
+  --gray-two: #bdc3c7;
+  --gray-three: #eceeef;
 
 	--accent-light: #c561f6;
 	--accent-regular: #7611a6;
@@ -75,6 +140,10 @@
 
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
+
+  /* #f7f7f9 */
+  /* --color-background: var(--background); */
+  /* --color-foreground: var(--foreground); */
 }
 
 :root.theme-dark {
@@ -143,10 +212,10 @@ body {
 	margin: 0;
 }
 
-img {
+/* img {
 	max-width: 100%;
 	height: auto;
-}
+} */
 
 a {
 	color: var(--link-color);
