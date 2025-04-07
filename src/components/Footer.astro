@@ -1,13 +1,11 @@
 ---
-// import "../assets/styles/globals.css";
-import { Image } from "astro:assets";
-import externalLinkImage from "../assets/svgs/external-link.svg";
+import ExternalLink from "../assets/svgs/external-link.svg";
 ---
 
 <footer class="flex flex-col w-full">
-	<div class="bg-red-two relative">
+	<div class="bg-red-400 relative">
 		<a
-			class="flex w-full justify-center py-2 uppercase items-center no-underline hover:*:w-full"
+			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="/"
 			rel="noopener noreferrer"
 			>Home
@@ -17,9 +15,9 @@ import externalLinkImage from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-red-one relative">
+	<div class="bg-rose-700 relative">
 		<a
-			class="flex w-full justify-center py-2 uppercase items-center no-underline hover:*:w-full"
+			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="/about"
 			rel="noopener noreferrer"
 			>About
@@ -29,9 +27,9 @@ import externalLinkImage from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-blue-two relative">
+	<div class="bg-slate-500 relative">
 		<a
-			class="flex w-full justify-center py-2 uppercase items-center no-underline hover:*:w-full"
+			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="/resume"
 			rel="noopener noreferrer"
 			>Resume
@@ -41,18 +39,17 @@ import externalLinkImage from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-blue-one relative">
+	<div class="bg-slate-800 relative">
 		<a
-			class="flex w-full justify-center py-2 uppercase items-center no-underline hover:*:w-full"
+			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="https://www.LinkedIn.com/in/mattwsteele"
 			rel="noopener noreferrer"
 			>LinkedIn
-			<Image
+			<ExternalLink
 				class="self-start pt-0.5 max-w-3"
-				src={externalLinkImage}
-				width="12"
-				height="12"
-				alt="External a Icon"
+				width="12px"
+				height="12px"
+				fill="white"
 			/>
 			<span
 				class="bg-red-one absolute bottom-0 left-0 block w-0 h-1 transparent transition-width duration-400"
@@ -60,18 +57,17 @@ import externalLinkImage from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-gray-two relative">
+	<div class="bg-stone-300 relative">
 		<a
-			class="flex w-full justify-center py-2 uppercase items-center no-underline hover:*:w-full"
+			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="https://westerncode.com"
 			rel="noopener noreferrer"
 			>Western Code
-			<Image
+			<ExternalLink
 				class="self-start pt-0.5 max-w-3"
-				src={externalLinkImage}
-				width="12"
-				height="12"
-				alt="External a Icon"
+				width="12px"
+				height="12px"
+				fill="white"
 			/>
 			<span
 				class="bg-red-one absolute bottom-0 left-0 block w-0 h-1 transparent transition-width duration-400"

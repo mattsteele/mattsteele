@@ -8,5 +8,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  //  site: 'https://www.mattsteele.dev'
+  //  site: 'https://www.mattsteele.dev',
+  experimental: {
+    svg: true,
+  },
 });
