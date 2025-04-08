@@ -105,17 +105,6 @@ const isCurrentPage = (href: string) => {
 			}
 		</ul>
 		<div class="menu-footer">
-			<div class="socials">
-				{
-					iconLinks.map(({ href, icon, label }) => (
-						<a href={href} class="social">
-							<span class="sr-only">{label}</span>
-							<Icon icon={icon} />
-						</a>
-					))
-				}
-			</div>
-
 			<div class="theme-toggle">
 				<ThemeToggle />
 			</div>

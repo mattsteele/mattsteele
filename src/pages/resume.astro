@@ -1,0 +1,245 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
+---
+
+<BaseLayout title="Resume | Matt Steele" description="Resume Matt Steele">
+	<div role="document" class="flex bg-gray-100 text-gray-900 font-sans">
+		<div
+			class="left-content basis-2xs bg-[var(--color-blue-five)] text-white w-1/4 p-6"
+		>
+			<aside class="sidebar">
+				<div class="container">
+					<div class="actions">
+						<!-- <PrintButton /> -->
+					</div>
+				</div>
+			</aside>
+		</div>
+
+		<div class="right-content">
+			<header class="py-12 text-gray-900">
+				<div class="container mx-auto px-6">
+					<div class="flex items-center">
+						<div class="mr-8">
+							<Image
+								src={mattSteeleIllustrated}
+								width="150"
+								height="150"
+								alt="Matt Steele"
+								class="rounded-full border-4 white"
+							/>
+						</div>
+						<div>
+							<h1 class="text-5xl font-bold">Matt Steele</h1>
+							<p class="text-xl mt-2">
+								<span>Senior Software Engineer</span>
+								<span class="mx-2" aria-hidden="true">·</span>
+								<span>Denver, CO</span>
+							</p>
+							<div class="flex items-center mt-6 space-x-6">
+								<a
+									aria-label="Email"
+									href="mailto:mattsteele@outlook.com"
+									class="flex items-center text-gray-900 hover:underline"
+								>
+									<Image
+										class="fill-white"
+										src="/icons/email.svg"
+										width="20"
+										height="20"
+										alt="Email Icon"
+									/>
+									<span class="ml-2">mattsteele@outlook.com</span>
+								</a>
+								<a
+									aria-label="Website"
+									href="https://mattsteele.dev"
+									class="flex items-center text-gray-900 hover:underline"
+								>
+									<Image
+										class="fill-white"
+										src="/icons/laptop.svg"
+										width="20"
+										height="20"
+										alt="Website Icon"
+									/>
+									<span class="ml-2">mattsteele.dev</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<main class="container mx-auto px-6 pb-12 flex-grow">
+				<section id="section-introduction" class="mb-12">
+					<p class="text-lg leading-relaxed">
+						Software Engineer with over a decade of experience in designing and
+						developing scalable web applications, design systems, and developer
+						tools. Proven track record of enhancing developer experience (DX)
+						and streamlining workflows through innovative tooling and libraries.
+					</p>
+					<p class="text-lg leading-relaxed">
+						Proficient in modern JavaScript frameworks such as React and
+						Angular, with a strong emphasis on front-end architecture and
+						seamless integration with backend APIs.
+					</p>
+
+					<p class="text-lg leading-relaxed">
+						Adept at leveraging AWS services to build robust, cloud-native
+						solutions that enhance performance and scalability.
+					</p>
+					<p class="text-lg leading-relaxed">
+						Passionate about improving developer experience (DX) through
+						innovative tooling and streamlined workflows.
+					</p>
+				</section>
+
+				<section id="section-experience" class="mb-12">
+					<h2 class="text-3xl font-bold mb-6">Work Experience</h2>
+					<ol class="entrylist space-y-8">
+						<li class="entrylist__item">
+							<article>
+								<div class="mb-4">
+									<h3 class="text-2xl font-semibold">
+										Senior Software Engineer
+									</h3>
+									<p class="text-sm text-gray-600">
+										<time dateTime="2017-10-01">10/2017</time>
+										<span class="mx-1">–</span>
+										<span>Present</span>
+									</p>
+									<p class="text-sm text-gray-600">
+										<a
+											href="https://www.spectrum.net"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-blue-600 hover:underline"
+										>
+											Charter Communications
+										</a>
+										<span class="mx-1" aria-hidden="true">·</span>
+										<span>Denver, CO</span>
+									</p>
+								</div>
+								<p class="text-lg leading-relaxed">
+									As a member of the Developer Experience team, I specialize in
+									designing and implementing tools and libraries that enhance
+									the productivity and efficiency of internal development teams.
+									My work involves architecting and maintaining scalable
+									solutions using JavaScript, React, and Angular, with a focus
+									on streamlining application development and ensuring
+									consistency across projects. I contribute to improving build
+									processes, optimizing workflows, and creating comprehensive
+									documentation to support developers. Additionally, I have
+									extensive experience in front-end architecture and seamless
+									integration with backend APIs, collaborating closely with
+									cross-functional teams to deliver robust, user-centric
+									solutions that ensure efficient data flow and an exceptional
+									user experience.
+								</p>
+							</article>
+						</li>
+						<li class="entrylist__item">
+							<article>
+								<div class="mb-4">
+									<h3 class="text-2xl font-semibold">Senior Web Developer</h3>
+									<p class="text-sm text-gray-600">
+										<time dateTime="2016-05-01">05/2016</time>
+										<span class="mx-1">–</span>
+										<time dateTime="2017-10-01">10/2017</time>
+									</p>
+									<p class="text-sm text-gray-600">
+										<a
+											href="https://clover.partners/"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-blue-600 hover:underline"
+										>
+											Clover Partners
+										</a>
+										<span class="mx-1" aria-hidden="true">·</span>
+										<span>Denver, CO</span>
+									</p>
+								</div>
+								<p class="text-lg leading-relaxed">
+									Developed client-facing applications using JavaScript and PHP,
+									integrated with Craft and Statamic CMS platforms. Led the full
+									client lifecycle, from UX design and workflows to CMS
+									training. Delivered eCommerce solutions, including payment
+									systems and user flow optimizations.
+								</p>
+							</article>
+						</li>
+						<li class="entrylist__item">
+							<article>
+								<div class="mb-4">
+									<h3 class="text-2xl font-semibold">
+										Lead Web Developer/UX Designer
+									</h3>
+									<p class="text-sm text-gray-600">
+										<time dateTime="2015-01-01">01/2015</time>
+										<span class="mx-1">–</span>
+										<time dateTime="2016-02-01">02/2016</time>
+									</p>
+									<p class="text-sm text-gray-600">
+										<a
+											href="https://www.brandiron.net"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-blue-600 hover:underline"
+										>
+											Brand Iron
+										</a>
+										<span class="mx-1" aria-hidden="true">·</span>
+										<span>Denver, CO</span>
+									</p>
+								</div>
+								<p class="text-lg leading-relaxed">
+									Led a team to design and develop websites for clients across
+									various industries. Managed front-end and back-end
+									development, ensuring seamless operations and ongoing
+									maintenance.
+								</p>
+							</article>
+						</li>
+					</ol>
+				</section>
+
+				<section id="section-education" class="mb-12">
+					<h2 class="text-3xl font-bold mb-6">Education</h2>
+					<ol class="space-y-6">
+						<li>
+							<article>
+								<div>
+									<h3 class="text-2xl font-semibold">Bachelor of Fine Arts</h3>
+									<p class="text-sm text-gray-600">
+										<a
+											href="https://www.academyart.edu/"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-blue-600 hover:underline"
+										>
+											Academy of Art University
+										</a>
+										<span class="mx-1" aria-hidden="true">·</span>
+										<span>San Francisco, CA</span>
+									</p>
+								</div>
+							</article>
+						</li>
+					</ol>
+				</section>
+			</main>
+
+			<footer class="bg-gray-800 text-white py-6 flex">
+				<div class="container mx-auto px-6">
+					{/* <p>© Matt Steele</p> */}
+					<p>Last updated: 4.4.2025</p>
+				</div>
+			</footer>
+		</div>
+	</div>
+</BaseLayout>

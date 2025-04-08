@@ -3,6 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
+
+import { Image } from "astro:assets";
+import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 ---
 
 <BaseLayout
@@ -15,8 +18,8 @@ import Hero from "../components/Hero.astro";
 				title="About"
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 			>
-				<img
-					src="/images/matt-steele.jpg"
+				<Image
+					src={mattSteeleIllustrated}
 					alt="Matt Steele"
 					width="400"
 					height="400"
