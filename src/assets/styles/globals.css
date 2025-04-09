@@ -1,28 +1,27 @@
-
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 @theme {
-  --color-blue-one: #1e2e3e;
-  --color-blue-two: #507796;
-  --color-blue-three: #2a94c8;
-  --color-blue-four: #1e2e3e;
-  --color-blue-five: #005b96;
+	--color-blue-one: #1e2e3e;
+	--color-blue-two: #507796;
+	--color-blue-three: #2a94c8;
+	--color-blue-four: #1e2e3e;
+	--color-blue-five: #005b96;
 
-  --color-red-one: #b33d40;
-  --color-red-two: #d1625b;
+	--color-red-one: #b33d40;
+	--color-red-two: #d1625b;
 
-  --color-gray-one: #e0e0e0;
-  --color-gray-two: #bdc3c7;
-  --color-gray-three: #eceeef;
+	--color-gray-one: #e0e0e0;
+	--color-gray-two: #bdc3c7;
+	--color-gray-three: #eceeef;
 
-  /* #f7f7f9 */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+	/* #f7f7f9 */
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
 
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
@@ -31,31 +30,27 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	/* --color-background: var(--background); */
+	/* --color-foreground: var(--foreground); */
+	/* --font-sans: var(--font-geist-sans); */
+	/* --font-mono: var(--font-geist-mono); */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-
-
-}
+/* Turned off during development */
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+} */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
- /* KEEP ABOVE THIS LINE */
+/* KEEP ABOVE THIS LINE */
 
 /* Global variables */
 @theme {
@@ -101,7 +96,11 @@ body {
 	--gradient-stop-1: var(--accent-light);
 	--gradient-stop-2: var(--accent-regular);
 	--gradient-stop-3: var(--accent-dark);
-	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
+	--gradient-subtle: linear-gradient(
+		150deg,
+		var(--gray-900) 19%,
+		var(--gray-999) 150%
+	);
 	--gradient-accent: linear-gradient(
 		150deg,
 		var(--gradient-stop-1),
@@ -117,15 +116,15 @@ body {
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
 	/* Shadows */
-	--shadow-sm:
-		0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
-		0px 2px 2px rgba(9, 11, 17, 0.02), 0px 0px 1px rgba(9, 11, 17, 0.03);
-	--shadow-md:
-		0px 28px 11px rgba(9, 11, 17, 0.01), 0px 16px 10px rgba(9, 11, 17, 0.03),
-		0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
-	--shadow-lg:
-		0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
-		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
+	--shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01),
+		0px 4px 2px rgba(9, 11, 17, 0.01), 0px 2px 2px rgba(9, 11, 17, 0.02),
+		0px 0px 1px rgba(9, 11, 17, 0.03);
+	--shadow-md: 0px 28px 11px rgba(9, 11, 17, 0.01),
+		0px 16px 10px rgba(9, 11, 17, 0.03), 0px 7px 7px rgba(9, 11, 17, 0.05),
+		0px 2px 4px rgba(9, 11, 17, 0.06);
+	--shadow-lg: 0px 62px 25px rgba(9, 11, 17, 0.01),
+		0px 35px 21px rgba(9, 11, 17, 0.05), 0px 16px 16px rgba(9, 11, 17, 0.1),
+		0px 4px 9px rgba(9, 11, 17, 0.12);
 
 	/* Text Sizes */
 	--text-sm: 0.875rem;
@@ -139,17 +138,14 @@ body {
 	--text-5xl: 4.5rem;
 
 	/* Fonts */
-	--font-system:
-		system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-body: 'Public Sans', var(--font-system);
+	--font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	--font-body: "Public Sans", var(--font-system);
 	--font-brand: Rubik, var(--font-system);
 
-
-
-  /* #f7f7f9 */
-  /* --color-background: var(--background); */
-  /* --color-foreground: var(--foreground); */
+	/* #f7f7f9 */
+	/* --color-background: var(--background); */
+	/* --color-foreground: var(--foreground); */
 }
 
 :root.theme-dark {
@@ -177,7 +173,11 @@ body {
 	/* --link-color: var(--accent-dark); */
 
 	--gradient-stop-1: #4c11c6;
-	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
+	--gradient-subtle: linear-gradient(
+		150deg,
+		var(--gray-900) 19%,
+		var(--gray-999) 81%
+	);
 	--gradient-accent-orange: linear-gradient(
 		150deg,
 		#ca7879,
@@ -186,15 +186,16 @@ body {
 	);
 	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
 
-	--shadow-sm:
-		0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
-		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
-	--shadow-md:
-		0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
+	--shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01),
+		0px 4px 2px rgba(255, 255, 255, 0.01), 0px 2px 2px rgba(255, 255, 255, 0.02),
+		0px 0px 1px rgba(255, 255, 255, 0.03);
+	--shadow-md: 0px 28px 11px rgba(255, 255, 255, 0.01),
+		0px 16px 10px rgba(255, 255, 255, 0.03),
 		0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
-	--shadow-lg:
-		0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
-		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
+	--shadow-lg: 0px 62px 25px rgba(255, 255, 255, 0.01),
+		0px 35px 21px rgba(255, 255, 255, 0.05),
+		0px 16px 16px rgba(255, 255, 255, 0.1),
+		0px 4px 9px rgba(255, 255, 255, 0.12);
 }
 
 html,
