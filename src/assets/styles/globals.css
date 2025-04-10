@@ -1,10 +1,7 @@
 @import "tailwindcss";
 
-:root {
-	--background: #ffffff;
-	--foreground: #171717;
-}
-
+/* 
+Theme variables are special CSS variables defined using the @theme directive that influence which utility classes exist in your project. */
 @theme {
 	--color-blue-one: #1e2e3e;
 	--color-blue-two: #507796;
@@ -18,17 +15,15 @@
 	--color-gray-one: #e0e0e0;
 	--color-gray-two: #bdc3c7;
 	--color-gray-three: #eceeef;
-
 	/* #f7f7f9 */
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
-
 	--link-color: var(--color-white);
 }
 
+/* When defining theme variables that reference other variables, use the inline option */
 @theme inline {
 	/* --color-background: var(--background); */
 	/* --color-foreground: var(--foreground); */
@@ -36,19 +31,11 @@
 	/* --font-mono: var(--font-geist-mono); */
 }
 
-/* Turned off during development */
-/* @media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-} */
-
-body {
+/* body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 /* KEEP ABOVE THIS LINE */
 
@@ -148,7 +135,7 @@ body {
 	/* --color-foreground: var(--foreground); */
 }
 
-:root.theme-dark {
+/* :root.theme-dark {
 	--gray-0: #ffffff;
 	--gray-50: #f3f4f7;
 	--gray-100: #e3e6ee;
@@ -172,7 +159,7 @@ body {
 
 	/* --link-color: var(--accent-dark); */
 
-	--gradient-stop-1: #4c11c6;
+/* --gradient-stop-1: #4c11c6;
 	--gradient-subtle: linear-gradient(
 		150deg,
 		var(--gray-900) 19%,
@@ -183,8 +170,8 @@ body {
 		#ca7879,
 		var(--accent-regular),
 		var(--accent-light)
-	);
-	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
+	); */
+/* --gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
 
 	--shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01),
 		0px 4px 2px rgba(255, 255, 255, 0.01), 0px 2px 2px rgba(255, 255, 255, 0.02),
@@ -195,29 +182,29 @@ body {
 	--shadow-lg: 0px 62px 25px rgba(255, 255, 255, 0.01),
 		0px 35px 21px rgba(255, 255, 255, 0.05),
 		0px 16px 16px rgba(255, 255, 255, 0.1),
-		0px 4px 9px rgba(255, 255, 255, 0.12);
-}
+		0px 4px 9px rgba(255, 255, 255, 0.12); */
+/* }  */
 
-html,
+/* html,
 body {
 	min-height: 100%;
 	overflow-x: hidden;
-}
+} */
 
-body {
+/* body {
 	background-color: var(--gray-999);
 	color: var(--gray-200);
 	font-family: var(--font-body);
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.5;
-}
+} */
 
-*,
+/* *,
 *::after,
 *::before {
 	box-sizing: border-box;
 	margin: 0;
-}
+} */
 
 /* img {
 	max-width: 100%;
@@ -273,12 +260,12 @@ h5 {
 	border-width: 0;
 }
 
-.wrapper {
+/* .wrapper {
 	width: 100%;
 	max-width: 83rem;
 	margin-inline: auto;
 	padding-inline: 1.5rem;
-}
+} */
 
 /* .stack {
 	display: flex;
@@ -310,7 +297,7 @@ h5 {
 	gap: 12rem;
 } */
 
-@media (min-width: 50em) {
+/* @media (min-width: 50em) {
 	.lg\:gap-2 {
 		gap: 0.5rem;
 	}
@@ -335,4 +322,4 @@ h5 {
 	.lg\:gap-48 {
 		gap: 12rem;
 	}
-}
+} */
