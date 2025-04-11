@@ -1,12 +1,12 @@
 ---
-import Icon from './Icon.astro';
+import Icon from "./Icon.astro";
 ---
 
 <theme-toggle>
 	<button>
 		<span class="sr-only">Dark theme</span>
-		<span class="icon light"><Icon icon="sun" /></span>
-		<span class="icon dark"><Icon icon="moon-stars" /></span>
+		<span class="invisible dark:visible"><Icon icon="sun" /></span>
+		<span class="dark:invisible"><Icon icon="moon-stars" /></span>
 	</button>
 </theme-toggle>
 
@@ -26,14 +26,14 @@ import Icon from './Icon.astro';
 		position: relative;
 		display: flex;
 		padding: 0.5rem;
-		width: 2rem;
-		height: 2rem;
-		font-size: 1rem;
+		width: 4rem;
+		height: 4rem;
+		font-size: 4rem;
 		color: var(--accent-overlay);
 	}
 
 	.icon.light::before {
-		content: '';
+		content: "";
 		z-index: -1;
 		position: absolute;
 		inset: 0;
@@ -47,7 +47,7 @@ import Icon from './Icon.astro';
 
 	:global(.theme-dark) .icon.dark,
 	:global(html:not(.theme-dark)) .icon.light,
-	button[aria-pressed='false'] .icon.light {
+	button[aria-pressed="false"] .icon.light {
 		color: var(--accent-text-over);
 	}
 
@@ -71,25 +71,18 @@ import Icon from './Icon.astro';
 	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
-
-			const button = this.querySelector('button')!;
-
-			/** Set the theme to dark/light mode. */
-			const setTheme = (dark: boolean) => {
-				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
-				button.setAttribute('aria-pressed', String(dark));
+			if (typeof window === "undefined") return;
+			const button = this.querySelector("button");
+			const setTheme = (dark) => {
+				document.documentElement.classList[dark ? "add" : "remove"]("dark");
+				localStorage.setItem("theme", dark ? "dark" : "light");
 			};
-
-			// Toggle the theme when a user clicks the button.
-			button.addEventListener('click', () => setTheme(!this.isDark()));
-
-			// Initialize button state to reflect current theme.
+			button.addEventListener("click", () => setTheme(!this.isDark()));
 			setTheme(this.isDark());
 		}
-
 		isDark() {
-			return document.documentElement.classList.contains('theme-dark');
+			return document.documentElement.classList.contains("dark");
 		}
 	}
-	customElements.define('theme-toggle', ThemeToggle);
+	customElements.define("theme-toggle", ThemeToggle);
 </script>

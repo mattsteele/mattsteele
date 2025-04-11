@@ -3,7 +3,7 @@ import ExternalLink from "../assets/svgs/external-link.svg";
 ---
 
 <footer class="flex flex-col w-full">
-	<div class="bg-red-400 relative">
+	<div class="bg-rose-400 dark:bg-gray-400 relative">
 		<a
 			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="/"
@@ -15,7 +15,7 @@ import ExternalLink from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-rose-700 relative">
+	<div class="bg-rose-700 dark:bg-gray-500 relative">
 		<a
 			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="/about"
@@ -27,10 +27,10 @@ import ExternalLink from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-slate-500 relative">
+	<div class="bg-neutral-100 dark:bg-gray-600 relative">
 		<a
-			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
-			href="/resume"
+			class="flex w-full justify-center text-slate-500 py-2 uppercase items-center no-underline hover:*:w-full"
+			href="/work"
 			rel="noopener noreferrer"
 			>Work
 			<span
@@ -39,16 +39,34 @@ import ExternalLink from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-slate-800 relative">
+	<div class="bg-neutral-400 dark:bg-gray-700 relative">
+		<a
+			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
+			href="https://github.com/mattsteele"
+			rel="noopener noreferrer"
+			>GitHub
+			<ExternalLink
+				class="pb-1 max-w-3"
+				width="22px"
+				height="22px"
+				fill="white"
+			/>
+			<span
+				class="bg-gray-300 absolute bottom-0 left-0 block w-0 h-1 transparent transition-width duration-400"
+			></span>
+		</a>
+	</div>
+
+	<div class="bg-slate-400 dark:bg-gray-800 relative">
 		<a
 			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="https://www.LinkedIn.com/in/mattwsteele"
 			rel="noopener noreferrer"
 			>LinkedIn
 			<ExternalLink
-				class="self-start pt-0.5 max-w-3"
-				width="12px"
-				height="12px"
+				class="pb-1 max-w-3"
+				width="22px"
+				height="22px"
 				fill="white"
 			/>
 			<span
@@ -57,16 +75,16 @@ import ExternalLink from "../assets/svgs/external-link.svg";
 		</a>
 	</div>
 
-	<div class="bg-stone-300 relative">
+	<div class="bg-slate-700 dark:bg-gray-900 relative">
 		<a
 			class="flex w-full justify-center text-white py-2 uppercase items-center no-underline hover:*:w-full"
 			href="https://westerncode.com"
 			rel="noopener noreferrer"
 			>Western Code
 			<ExternalLink
-				class="self-start pt-0.5 max-w-3"
-				width="12px"
-				height="12px"
+				class="pb-1 max-w-3"
+				width="16px"
+				height="16px"
 				fill="white"
 			/>
 			<span
