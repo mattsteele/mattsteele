@@ -1,16 +1,24 @@
 ---
-import Icon from "./Icon.astro";
+import Sun from "../assets/svgs/sun.svg";
+import MoonStars from "../assets/svgs/moon-stars.svg";
 ---
 
 <theme-toggle>
-	<button>
+	<button
+		class="text-gray-800 hover:text-gray-400 dark:text-white hover:cursor-pointer"
+	>
 		<span class="sr-only">Dark theme</span>
-		<span class="invisible dark:visible"><Icon icon="sun" /></span>
-		<span class="dark:invisible"><Icon icon="moon-stars" /></span>
+		<span class="hidden dark:block">
+			<Sun width="28px" height="28px" />
+		</span>
+
+		<span class="dark:hidden">
+			<MoonStars width="28px" height="28px" />
+		</span>
 	</button>
 </theme-toggle>
 
-<style>
+<!-- <style>
 	button {
 		display: flex;
 		border: 0;
@@ -65,7 +73,7 @@ import Icon from "./Icon.astro";
 			background-color: SelectedItem;
 		}
 	}
-</style>
+</style> -->
 
 <script>
 	class ThemeToggle extends HTMLElement {
@@ -73,11 +81,13 @@ import Icon from "./Icon.astro";
 			super();
 			if (typeof window === "undefined") return;
 			const button = this.querySelector("button");
-			const setTheme = (dark) => {
+			const setTheme = (dark: boolean) => {
 				document.documentElement.classList[dark ? "add" : "remove"]("dark");
 				localStorage.setItem("theme", dark ? "dark" : "light");
 			};
-			button.addEventListener("click", () => setTheme(!this.isDark()));
+			if (button) {
+				button.addEventListener("click", () => setTheme(!this.isDark()));
+			}
 			setTheme(this.isDark());
 		}
 		isDark() {

@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
 
 <BaseLayout>
 	<div class="flex flex-col justify-center h-screen items-center">
-		<div>
+		<div class="fade-in">
 			<h1 class="text-8xl uppercase text-gray-800 font-mono dark:text-white">
 				Matt Steele
 			</h1>
@@ -22,14 +22,30 @@ if (typeof window !== "undefined") {
 				Software Engineer
 			</h2>
 
-			<div class="border-2 border-solid max-w-2xs mt-10 p-2">
+			<!-- <div class="border-2 border-solid max-w-2xs mt-10 p-2">
 				<p class="text-lg text-gray-600 dark:text-white">
 					Prod or Dev?: {mode}
 				</p>
 				<p class="text-lg text-gray-600 dark:text-white">
 					Light or Dark?: {themeMode}
 				</p>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </BaseLayout>
+<style>
+	.fade-in {
+		animation: fade-in 0.75s ease-in-out;
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>
