@@ -1,19 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const mode = import.meta.env.MODE;
-
-let themeMode = "light";
-
-if (typeof window !== "undefined") {
-	themeMode = document.documentElement.classList.contains("dark")
-		? "dark"
-		: "light";
-}
 ---
 
 <BaseLayout>
-	<div class="flex flex-col justify-center h-screen items-center">
+	<main class="flex flex-col h-screen justify-center items-center">
 		<div class="fade-in">
 			<h1 class="text-8xl uppercase text-gray-800 font-mono dark:text-white">
 				Matt Steele
@@ -21,17 +11,8 @@ if (typeof window !== "undefined") {
 			<h2 class="text-4xl text-gray-800 font-mono dark:text-white">
 				Software Engineer
 			</h2>
-
-			<!-- <div class="border-2 border-solid max-w-2xs mt-10 p-2">
-				<p class="text-lg text-gray-600 dark:text-white">
-					Prod or Dev?: {mode}
-				</p>
-				<p class="text-lg text-gray-600 dark:text-white">
-					Light or Dark?: {themeMode}
-				</p>
-			</div> -->
 		</div>
-	</div>
+	</main>
 </BaseLayout>
 <style>
 	.fade-in {

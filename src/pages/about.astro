@@ -1,29 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactCTA from "../components/ContactCTA.astro";
-import Hero from "../components/Hero.astro";
-
 import { Image } from "astro:assets";
 import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
+import mattSteeleSignature from "../assets/images/mattsteele-signature.png";
 ---
 
-<BaseLayout
-	title="About | Matt Steele"
-	description="About Matt Steele Lorem Ipsum"
->
-	<div class="stack gap-20 border-8 border-indigo-600">
-		<main class="wrapper about border-8 border-red-600">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+<BaseLayout title="About | Matt Steele" description="About Matt Steele">
+	<main class="flex flex-col h-screen items-center justify-center">
+		<div class="flex flex-col items-center my-96 max-w-3xl fade-in">
+			<div
+				class="mt-5 relative w-md h-96 bg-gray-900 dark:bg-gray-500 pt-6 pl-6"
 			>
+				<h2 class="text-white text-2xl uppercase mb-0.5 tracking-wide">
+					Matt Steele
+				</h2>
+				<h3 class="text-white text-base mt-0">Software Engineer</h3>
 				<Image
+					class="absolute bottom-0 right-0"
 					src={mattSteeleIllustrated}
 					alt="Matt Steele"
-					width="400"
-					height="400"
-					loading="lazy"
+					width="326"
+					height="326"
 				/>
+			</div>
+
+			<div class="mt-10 text-xl space-y-4 dark:text-white">
 				<p>
 					I build & maintain systems for designers & developers. Much of my work
 					is in component libraries, tokens, application prototyping, &
@@ -39,107 +40,22 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 					I currently work as a Senior Software Engineer in Denver, Colorado.
 				</p>
 
-				You can reach me <a href="mailto:mattsteele@outlook.com">here</a>.
-			</Hero>
-		</main>
+				You can reach me <a
+					class="hover:text-rose-700 dark:text-white dark:hover:text-gray-300 border-b-2 border-solid border-rose-700 dark:border-gray-300"
+					href="mailto:mattsteele@outlook.com">here</a
+				>.
 
-		<section>
-			<h2 class="section-title">Background</h2>
-			<div class="content border-8 border-green-600">
-				<p>
-					Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a>
-					makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore
-					magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae.
-					Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam
-					sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in
-					ornare.
-				</p>
-				<p>
-					Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget
-					gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat
-					pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh
-					venenatis cras sed felis eget velit. Id diam vel quam elementum
-					pulvinar etiam non.
-				</p>
-				<p>
-					Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem
-					viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac
-					ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque
-					eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
-				</p>
+				<div class="mt-10">
+					<Image
+						class="mb-4"
+						src={mattSteeleSignature}
+						alt="Matt Steele Signature"
+						width="100"
+						height="33"
+					/>
+					<h2 class="text-lg uppercase mt-0.5 tracking-wide">Matt Steele</h2>
+				</div>
 			</div>
-		</section>
-		<section>
-			<h2 class="section-title">Education</h2>
-			<div class="content">
-				<p>Corporis voluptates tenetur laudantium.</p>
-			</div>
-		</section>
-		<section>
-			<h2 class="section-title">Skills</h2>
-			<div class="content">
-				<p>officia unde omnis</p>
-			</div>
-		</section>
-	</div>
-
-	<ContactCTA />
+		</div>
+	</main>
 </BaseLayout>
-
-<style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
-
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
-
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
-</style>
