@@ -29,6 +29,7 @@ import MoonStars from "../assets/svgs/moon-stars.svg";
 			const applyTheme = (theme: string) => {
 				document.documentElement.classList.remove("dark", "light");
 				document.documentElement.classList.add(theme);
+				document.documentElement.setAttribute("data-theme", theme);
 				localStorage.setItem("theme", theme);
 			};
 
