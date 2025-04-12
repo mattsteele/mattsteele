@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Uncomment this to force light mode during development */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* 
