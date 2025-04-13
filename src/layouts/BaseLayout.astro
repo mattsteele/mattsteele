@@ -1,4 +1,8 @@
 ---
+// Transition Imports
+import { ClientRouter } from "astro:transitions";
+import { fade } from "astro:transitions";
+
 // Component Imports
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
@@ -15,6 +19,7 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<head>
 		<MainHead title={title} description={description} />
+		<ClientRouter />
 		<script is:inline>
 			const theme =
 				localStorage.getItem("theme") ||
@@ -24,7 +29,10 @@ const { title, description } = Astro.props;
 			document.documentElement.classList.add(theme);
 		</script>
 	</head>
-	<body class="bg:white dark:bg-gray-800 dark:text-gray-200 text-gray-800">
+	<body
+		transition:animate={fade({ duration: "0.25s" })}
+		class="bg:white dark:bg-gray-800 dark:text-gray-200 text-gray-800"
+	>
 		<div class="antialiased flex flex-col h-screen">
 			<Nav />
 			<slot />
