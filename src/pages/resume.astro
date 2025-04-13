@@ -81,8 +81,35 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 				<section class="mb-12 space-y-2 max-w-5xl">
 					<h2 class="text-3xl font-bold mb-6">Work Experience</h2>
 					<hr class="border-gray-300 mb-4" />
-					<ol class="entrylist space-y-8">
-						<li class="entrylist__item">
+
+					<ol
+						class="relative
+							pl-4
+							space-y-8
+							before:absolute
+							before:block
+							before:w-px
+							before:bg-gradient-to-b
+							before:from-gray-500
+							before:via-gray-400
+							before:to-transparent
+							before:top-0
+							before:left-4
+							before:bottom-10"
+					>
+						<li
+							class="relative
+							pl-8
+							before:absolute
+							before:block
+							before:w-2.5
+							before:h-2.5
+							before:rounded-full
+							before:bg-[var(--color-rose-700)]
+							before:top-9
+							before:left-0
+							before:translate-x-[-50%]"
+						>
 							<article>
 								<div class="mb-4">
 									<h3 class="text-2xl font-semibold">
@@ -114,7 +141,19 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 								</p>
 							</article>
 						</li>
-						<li class="entrylist__item">
+						<li
+							class="relative
+							pl-8
+							before:absolute
+							before:block
+							before:w-2.5
+							before:h-2.5
+							before:rounded-full
+							before:bg-[var(--color-rose-700)]
+							before:top-9
+							before:left-0
+							before:translate-x-[-50%]"
+						>
 							<article>
 								<div class="mb-4">
 									<h3 class="text-2xl font-semibold">Senior Web Developer</h3>
@@ -145,7 +184,19 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 								</p>
 							</article>
 						</li>
-						<li class="entrylist__item">
+						<li
+							class="relative
+							pl-8
+							before:absolute
+							before:block
+							before:w-2.5
+							before:h-2.5
+							before:rounded-full
+							before:bg-[var(--color-rose-700)]
+							before:top-9
+							before:left-0
+							before:translate-x-[-50%]"
+						>
 							<article>
 								<div class="mb-4">
 									<h3 class="text-2xl font-semibold">
@@ -213,49 +264,3 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 		</div>
 	</div>
 </BaseLayout>
-
-<style>
-	.entrylist {
-		position: relative;
-		padding-left: 1rem;
-	}
-	.entrylist::before {
-		content: "";
-		display: block;
-		width: 1px;
-		background: #818a91;
-		background: linear-gradient(
-			to top,
-			rgba(129, 138, 145, 0) 0,
-			#818a91 100px,
-			#818a91 100%
-		);
-		position: absolute;
-		top: 2.25rem;
-		left: 1rem;
-		bottom: 0;
-	}
-
-	.entrylist > * + * {
-		margin-top: 2rem;
-	}
-
-	.entrylist__item {
-		position: relative;
-		padding-left: 2rem;
-	}
-
-	.entrylist__item::before {
-		content: "";
-		display: block;
-		width: 0.625rem;
-		height: 0.625rem;
-		border-radius: 50%;
-		background-color: #b33d40;
-		background-color: var(--secondary-color, #b33d40);
-		position: absolute;
-		top: 2.25rem;
-		left: 0;
-		transform: translate(-50%, 0);
-	}
-</style>
