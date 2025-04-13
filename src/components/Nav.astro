@@ -32,19 +32,21 @@ const isCurrentPage = (href: string) => {
 		</a>
 	</div>
 
-	<!-- This is also the mobile menu -->
 	<div id="menu-content" class="w-sm self-end flex">
 		<div class="grow-2 flex items-center space-between">
 			<ul class="w-full flex justify-between">
 				{
 					textLinks.map(({ label, href }) => (
-						<li class="">
+						<li>
 							<a
 								aria-current={isCurrentPage(href) ? "page" : null}
-								class={`hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative pb-4 px-1 ${isCurrentPage(href) ? "active" : ""}`}
+								class="hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative pb-4 px-1"
 								href={href}
 							>
 								{label}
+								{isCurrentPage(href) && (
+									<span class="bg-rose-700 absolute bottom-0 left-0 block w-full h-1 " />
+								)}
 								<span class="bg-rose-700 absolute bottom-0 left-0 block w-0 h-1 transparent transition-width duration-400 dark:bg-gray-300" />
 							</a>
 						</li>
@@ -53,7 +55,6 @@ const isCurrentPage = (href: string) => {
 			</ul>
 		</div>
 
-		<!-- This is desktop -->
 		<div class="ml-8 pr-8 pl-8 self-end border-l-1 border-gray-300">
 			<ThemeToggle />
 		</div>
