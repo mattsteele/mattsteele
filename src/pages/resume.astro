@@ -9,17 +9,11 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 <BaseLayout title="Resume | Matt Steele" description="Resume Matt Steele">
 	<div class="flex dark:text-white">
 		<!-- Sidebar -->
-		<div class="bg-slate-500 w-1/5 p-6">
-			<aside>
-				<div class="actions">
-					<!-- Placeholder for future actions -->
-				</div>
-			</aside>
-		</div>
+		<aside class="bg-slate-500 w-1/5 p-6"></aside>
 
 		<!-- Main Content -->
-		<div class="pt-12 flex-1">
-			<header class="px-6">
+		<div class="mt-12 flex-1">
+			<header class="mx-20">
 				<div class="flex items-center mb-6">
 					<div class="mr-8">
 						<Image
@@ -59,8 +53,10 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 				</div>
 			</header>
 
-			<main class="px-6 pb-12">
-				<section id="section-introduction" class="mb-12 space-y-2 max-w-5xl">
+			<main class="mx-20">
+				<section class="mb-12 space-y-2 max-w-5xl">
+					<h2 class="text-3xl font-bold mb-6">About</h2>
+					<hr class="border-gray-300 mb-4" />
 					<p class="text-lg leading-relaxed">
 						Software Engineer with over a decade of experience in designing and
 						developing scalable web applications, design systems, and developer
@@ -82,10 +78,11 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 					</p>
 				</section>
 
-				<section id="section-experience" class="mb-12 space-y-2 max-w-5xl">
+				<section class="mb-12 space-y-2 max-w-5xl">
 					<h2 class="text-3xl font-bold mb-6">Work Experience</h2>
+					<hr class="border-gray-300 mb-4" />
 					<ol class="entrylist space-y-8">
-						<li>
+						<li class="entrylist__item">
 							<article>
 								<div class="mb-4">
 									<h3 class="text-2xl font-semibold">
@@ -183,8 +180,9 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 					</ol>
 				</section>
 
-				<section id="section-education" class="mb-12 space-y-2 max-w-5xl">
+				<section class="mb-20 space-y-2 max-w-5xl">
 					<h2 class="text-3xl font-bold mb-6">Education</h2>
+					<hr class="border-gray-300 mb-4" />
 					<ol class="space-y-6">
 						<li>
 							<article>
@@ -209,11 +207,55 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 				</section>
 			</main>
 
-			<footer class="border-t border-gray-700 bg-gray-800 py-6">
-				<div class="mx-auto px-6 text-center">
-					<p>Last updated: 4.4.2025</p>
-				</div>
+			<footer class="bg-gray-800 p-10">
+				<p class="text-white">Last updated: 4.4.2025</p>
 			</footer>
 		</div>
 	</div>
 </BaseLayout>
+
+<style>
+	.entrylist {
+		position: relative;
+		padding-left: 1rem;
+	}
+	.entrylist::before {
+		content: "";
+		display: block;
+		width: 1px;
+		background: #818a91;
+		background: linear-gradient(
+			to top,
+			rgba(129, 138, 145, 0) 0,
+			#818a91 100px,
+			#818a91 100%
+		);
+		position: absolute;
+		top: 2.25rem;
+		left: 1rem;
+		bottom: 0;
+	}
+
+	.entrylist > * + * {
+		margin-top: 2rem;
+	}
+
+	.entrylist__item {
+		position: relative;
+		padding-left: 2rem;
+	}
+
+	.entrylist__item::before {
+		content: "";
+		display: block;
+		width: 0.625rem;
+		height: 0.625rem;
+		border-radius: 50%;
+		background-color: #b33d40;
+		background-color: var(--secondary-color, #b33d40);
+		position: absolute;
+		top: 2.25rem;
+		left: 0;
+		transform: translate(-50%, 0);
+	}
+</style>
