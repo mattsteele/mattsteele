@@ -27,10 +27,11 @@ const { title, description } = Astro.props;
 					? "dark"
 					: "light");
 			document.documentElement.classList.add(theme);
+			document.documentElement.setAttribute("data-theme", theme);
 		</script>
 	</head>
 	<body
-		transition:animate={fade({ duration: "0.25s" })}
+		transition:animate={fade({ duration: 250 })}
 		class="bg:white dark:bg-gray-800 dark:text-gray-200 text-gray-800"
 	>
 		<div class="antialiased flex flex-col h-screen">
@@ -42,13 +43,6 @@ const { title, description } = Astro.props;
 		<script>
 			addEventListener("load", () => {
 				document.documentElement.classList.add("loaded");
-
-				const theme =
-					localStorage.getItem("theme") ||
-					(window.matchMedia("(prefers-color-scheme: dark)").matches
-						? "dark"
-						: "light");
-				document.documentElement.setAttribute("data-theme", theme);
 			});
 		</script>
 	</body>

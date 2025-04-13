@@ -1,6 +1,6 @@
 # Matt Steele: Portfolio
 
-My personal site built in [Astro](https://docs.astro.build)
+My [personal site](https://mattsteele.dev) built with [Astro](https://astro.build/) &amp; [TailwindCSS](https://tailwindcss.com/). Hosted on [Netlify](https://netlify.com/).
 
 ## 🧞 Commands
 
