@@ -2,79 +2,65 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
+import EmailIcon from "../assets/svgs/email.svg";
+import LaptopIcon from "../assets/svgs/laptop.svg";
 ---
 
 <BaseLayout title="Resume | Matt Steele" description="Resume Matt Steele">
-	<div role="document" class="flex bg-gray-100 text-gray-900 font-sans">
-		<div
-			class="left-content basis-2xs bg-[var(--color-blue-five)] text-white w-1/4 p-6"
-		>
-			<aside class="sidebar">
-				<div class="container">
-					<div class="actions">
-						<!-- <PrintButton /> -->
-					</div>
+	<div class="flex dark:text-white">
+		<!-- Sidebar -->
+		<div class="bg-slate-500 w-1/5 p-6">
+			<aside>
+				<div class="actions">
+					<!-- Placeholder for future actions -->
 				</div>
 			</aside>
 		</div>
 
-		<div class="right-content">
-			<header class="py-12 text-gray-900">
-				<div class="container mx-auto px-6">
-					<div class="flex items-center">
-						<div class="mr-8">
-							<Image
-								src={mattSteeleIllustrated}
-								width="150"
-								height="150"
-								alt="Matt Steele"
-								class="rounded-full border-4 white"
-							/>
-						</div>
-						<div>
-							<h1 class="text-5xl font-bold">Matt Steele</h1>
-							<p class="text-xl mt-2">
-								<span>Senior Software Engineer</span>
-								<span class="mx-2" aria-hidden="true">·</span>
-								<span>Denver, CO</span>
-							</p>
-							<div class="flex items-center mt-6 space-x-6">
-								<a
-									aria-label="Email"
-									href="mailto:mattsteele@outlook.com"
-									class="flex items-center text-gray-900 hover:underline"
-								>
-									<Image
-										class="fill-white"
-										src="/icons/email.svg"
-										width="20"
-										height="20"
-										alt="Email Icon"
-									/>
-									<span class="ml-2">mattsteele@outlook.com</span>
-								</a>
-								<a
-									aria-label="Website"
-									href="https://mattsteele.dev"
-									class="flex items-center text-gray-900 hover:underline"
-								>
-									<Image
-										class="fill-white"
-										src="/icons/laptop.svg"
-										width="20"
-										height="20"
-										alt="Website Icon"
-									/>
-									<span class="ml-2">mattsteele.dev</span>
-								</a>
-							</div>
+		<!-- Main Content -->
+		<div class="pt-12 flex-1">
+			<header class="px-6">
+				<div class="flex items-center mb-6">
+					<div class="mr-8">
+						<Image
+							src={mattSteeleIllustrated}
+							width="150"
+							height="150"
+							alt="Matt Steele Illustration"
+							class="rounded-full border-4"
+						/>
+					</div>
+					<div>
+						<h1 class="text-5xl font-bold">Matt Steele</h1>
+						<p class="text-xl mt-2">
+							<span>Senior Software Engineer</span>
+							<span class="mx-2" aria-hidden="true">·</span>
+							<span>Denver, CO</span>
+						</p>
+						<div class="flex items-center my-6 space-x-6">
+							<a
+								aria-label="Email"
+								href="mailto:mattsteele@outlook.com"
+								class="flex items-center hover:underline"
+							>
+								<EmailIcon width="20px" height="20px" fill="white" />
+								<span class="ml-2">mattsteele@outlook.com</span>
+							</a>
+							<a
+								aria-label="Website"
+								href="https://mattsteele.dev"
+								class="flex items-center hover:underline"
+							>
+								<LaptopIcon width="20px" height="20px" fill="white" />
+								<span class="ml-2">mattsteele.dev</span>
+							</a>
 						</div>
 					</div>
 				</div>
 			</header>
 
-			<main class="container mx-auto px-6 pb-12 flex-grow">
-				<section id="section-introduction" class="mb-12">
+			<main class="px-6 pb-12">
+				<section id="section-introduction" class="mb-12 space-y-2 max-w-5xl">
 					<p class="text-lg leading-relaxed">
 						Software Engineer with over a decade of experience in designing and
 						developing scalable web applications, design systems, and developer
@@ -86,7 +72,6 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 						Angular, with a strong emphasis on front-end architecture and
 						seamless integration with backend APIs.
 					</p>
-
 					<p class="text-lg leading-relaxed">
 						Adept at leveraging AWS services to build robust, cloud-native
 						solutions that enhance performance and scalability.
@@ -97,21 +82,21 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 					</p>
 				</section>
 
-				<section id="section-experience" class="mb-12">
+				<section id="section-experience" class="mb-12 space-y-2 max-w-5xl">
 					<h2 class="text-3xl font-bold mb-6">Work Experience</h2>
 					<ol class="entrylist space-y-8">
-						<li class="entrylist__item">
+						<li>
 							<article>
 								<div class="mb-4">
 									<h3 class="text-2xl font-semibold">
 										Senior Software Engineer
 									</h3>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm dark:text-white">
 										<time datetime="2017-10-01">10/2017</time>
 										<span class="mx-1">–</span>
 										<span>Present</span>
 									</p>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm dark:text-white">
 										<a
 											href="https://www.spectrum.net"
 											target="_blank"
@@ -125,20 +110,10 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 									</p>
 								</div>
 								<p class="text-lg leading-relaxed">
-									As a member of the Developer Experience team, I specialize in
-									designing and implementing tools and libraries that enhance
-									the productivity and efficiency of internal development teams.
-									My work involves architecting and maintaining scalable
-									solutions using JavaScript, React, and Angular, with a focus
-									on streamlining application development and ensuring
-									consistency across projects. I contribute to improving build
-									processes, optimizing workflows, and creating comprehensive
-									documentation to support developers. Additionally, I have
-									extensive experience in front-end architecture and seamless
-									integration with backend APIs, collaborating closely with
-									cross-functional teams to deliver robust, user-centric
-									solutions that ensure efficient data flow and an exceptional
-									user experience.
+									Specialized in designing and implementing tools and libraries
+									that enhance developer productivity. Focused on scalable
+									solutions using JavaScript, React, and Angular, while
+									optimizing workflows and creating comprehensive documentation.
 								</p>
 							</article>
 						</li>
@@ -146,12 +121,12 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 							<article>
 								<div class="mb-4">
 									<h3 class="text-2xl font-semibold">Senior Web Developer</h3>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm dark:text-white">
 										<time datetime="2016-05-01">05/2016</time>
 										<span class="mx-1">–</span>
 										<time datetime="2017-10-01">10/2017</time>
 									</p>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm dark:text-white">
 										<a
 											href="https://clover.partners/"
 											target="_blank"
@@ -179,12 +154,12 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 									<h3 class="text-2xl font-semibold">
 										Lead Web Developer/UX Designer
 									</h3>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm dark:text-white">
 										<time datetime="2015-01-01">01/2015</time>
 										<span class="mx-1">–</span>
 										<time datetime="2016-02-01">02/2016</time>
 									</p>
-									<p class="text-sm text-gray-600">
+									<p class="text-sm dark:text-white">
 										<a
 											href="https://www.brandiron.net"
 											target="_blank"
@@ -208,7 +183,7 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 					</ol>
 				</section>
 
-				<section id="section-education" class="mb-12">
+				<section id="section-education" class="mb-12 space-y-2 max-w-5xl">
 					<h2 class="text-3xl font-bold mb-6">Education</h2>
 					<ol class="space-y-6">
 						<li>
@@ -234,9 +209,8 @@ import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 				</section>
 			</main>
 
-			<footer class="bg-gray-800 text-white py-6 flex">
-				<div class="container mx-auto px-6">
-					{/* <p>© Matt Steele</p> */}
+			<footer class="border-t border-gray-700 bg-gray-800 py-6">
+				<div class="mx-auto px-6 text-center">
 					<p>Last updated: 4.4.2025</p>
 				</div>
 			</footer>

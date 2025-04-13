@@ -41,7 +41,7 @@ const isCurrentPage = (href: string) => {
 						<li class="">
 							<a
 								aria-current={isCurrentPage(href) ? "page" : null}
-								class="hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative pb-4 px-1"
+								class={`hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative pb-4 px-1 ${isCurrentPage(href) ? "active" : ""}`}
 								href={href}
 							>
 								{label}
