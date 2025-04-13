@@ -1,11 +1,9 @@
 ---
-// import Icon from "./Icon.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-// import type { iconPaths } from "./IconPaths";
 import TerminalWindow from "../assets/svgs/terminal-window.svg";
 
 /** Main menu items */
-const textLinks: { label: string; href: string }[] = [
+const textLinks = [
 	{ label: "About", href: "/about/" },
 	{ label: "Resume", href: "/resume/" },
 	{ label: "Work", href: "/work/" },
@@ -14,8 +12,8 @@ const textLinks: { label: string; href: string }[] = [
 /** Test if a link is pointing to the current page. */
 const isCurrentPage = (href: string) => {
 	let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
-	if (pathname.at(0) !== "/") pathname = "/" + pathname;
-	if (pathname.at(-1) !== "/") pathname += "/";
+	if (!pathname.startsWith("/")) pathname = "/" + pathname;
+	if (!pathname.endsWith("/")) pathname += "/";
 	return pathname === href || (href !== "/" && pathname.startsWith(href));
 };
 ---
@@ -45,7 +43,7 @@ const isCurrentPage = (href: string) => {
 							>
 								{label}
 								{isCurrentPage(href) && (
-									<span class="bg-rose-700 absolute bottom-0 left-0 block w-full h-1 " />
+									<span class="bg-rose-700 absolute bottom-0 left-0 block w-full h-1" />
 								)}
 								<span class="bg-rose-700 absolute bottom-0 left-0 block w-0 h-1 transparent transition-width duration-400 dark:bg-gray-300" />
 							</a>
@@ -60,40 +58,3 @@ const isCurrentPage = (href: string) => {
 		</div>
 	</div>
 </nav>
-
-<script>
-	class MenuButton extends HTMLElement {
-		constructor() {
-			super();
-
-			// Inject menu toggle button when JS runs.
-			this.appendChild(this.querySelector("template")!.content.cloneNode(true));
-			const btn = this.querySelector("button")!;
-
-			// Hide menu (shown by default to support no-JS browsers).
-			const menu = document.getElementById("menu-content")!;
-			menu.hidden = true;
-			// Add "menu-content" class in JS to avoid covering content in non-JS browsers.
-			menu.classList.add("menu-content");
-
-			/** Set whether the menu is currently expanded or collapsed. */
-			const setExpanded = (expand: boolean) => {
-				btn.setAttribute("aria-expanded", expand ? "true" : "false");
-				menu.hidden = !expand;
-			};
-
-			// Toggle menu visibility when the menu button is clicked.
-			btn.addEventListener("click", () => setExpanded(menu.hidden));
-
-			// Hide menu button for large screens.
-			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
-				setExpanded(e.matches);
-				btn.hidden = e.matches;
-			};
-			const mediaQueries = window.matchMedia("(min-width: 50em)");
-			handleViewports(mediaQueries);
-			mediaQueries.addEventListener("change", handleViewports);
-		}
-	}
-	customElements.define("menu-button", MenuButton);
-</script>
