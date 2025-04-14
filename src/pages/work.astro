@@ -10,16 +10,11 @@ const projects = (await getCollection("work")).sort(
 ---
 
 <BaseLayout
-	title="My Work | Matt Steele"
-	description="Learn about Matt Steele's most recent work"
+	title="Work | Matt Steele"
+	description="Matt Steele's most recent work"
 >
 	<div class="m-16 stack gap-20">
 		<main class="wrapper stack gap-8">
-			<!-- <Hero
-				title="My Work"
-				tagline="See my most recent projects below to get an idea of my past experience."
-				align="start"
-			/> -->
 			<Grid variant="offset">
 				{
 					projects.map((project) => (
@@ -30,6 +25,5 @@ const projects = (await getCollection("work")).sort(
 				}
 			</Grid>
 		</main>
-		<!-- <ContactCTA /> -->
 	</div>
 </BaseLayout>
