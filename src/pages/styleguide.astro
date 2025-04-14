@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About | Matt Steele" description="About Matt Steele">
+	<main class="flex flex-col h-screen items-center justify-center fade-in">
+		<h1>Styleguide</h1>
+
+		<h2>Colors</h2>
+
+		<section class="section__color">
+			<div class="color-chip-wrapper">
+				<div class="color-chip blue-one-chip"></div>
+				<p>var(--blue-one) #1E2E3E</p>
+			</div>
+			<div class="color-chip-wrapper">
+				<div class="color-chip blue-two-chip"></div>
+				<p>var(--blue-two) #507796</p>
+			</div>
+			<div class="color-chip-wrapper">
+				<div class="color-chip blue-three-chip"></div>
+				<p>var(--blue-three) #2A94C8</p>
+			</div>
+			<div class="color-chip-wrapper">
+				<div class="color-chip blue-four-chip"></div>
+				<p>var(--blue-four) #1E2E3E</p>
+			</div>
+		</section><!-- .section__color -->
+
+		<section class="section__color">
+			<div class="color-chip-wrapper">
+				<div class="color-chip red-one-chip"></div>
+				<p>var(--red-one) #B33D40</p>
+			</div>
+			<div class="color-chip-wrapper">
+				<div class="color-chip red-two-chip"></div>
+				<p>var(--red-two) #D1625B</p>
+			</div>
+
+			<div class="color-chip-wrapper">
+				<div class="color-chip gray-one-chip"></div>
+				<p>var(--gray-one) #EEEEEE</p>
+			</div>
+			<div class="color-chip-wrapper">
+				<div class="color-chip gray-two-chip"></div>
+				<p>var(--gray-two) #BDC3C7</p>
+			</div>
+		</section><!-- .section__color -->
+
+		<hr />
+		<h2>Headings</h2>
+
+		<h1><a href="">This is a Heading 1 - 44px font size - Georgia</a></h1>
+		<h2><a href="">This is a Heading 2 - 32px font size - Georgia</a></h2>
+		<h3><a href="">This is a Heading 3 - 28px font size - Georgia</a></h3>
+		<h4><a href="">This is a Heading 4 - 24px font size - Georgia</a></h4>
+		<h5><a href="">This is a Heading 5 - 20px font size - Georgia</a></h5>
+		<h6><a href="">This is a Heading 6 - 18px font size - Georgia</a></h6>
+
+		<hr />
+		<h2>Body</h2>
+
+		<p>
+			This is a standard paragraph - Trebuchet MS 20px font - body copy is
+			#363636. <a href="/"
+				>Body links are naturally underlined and rollover to #D1625B</a
+			>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu neque,
+			pretium non quam non, efficitur ullamcorper ante. In lectus tellus, mollis
+			ac magna vel, placerat rhoncus dui. Nulla lobortis ornare facilisis.
+			Pellentesque eleifend turpis id sapien eleifend, id tristique mauris
+			finibus. Curabitur in nibh sapien. Duis sit amet felis quis mi dictum
+			congue. In a ullamcorper nunc, sit amet dapibus mi. Donec non erat
+			vulputate, varius eros ut, lacinia quam.
+		</p>
+
+		<hr />
+
+		<h2>Buttons</h2>
+
+		<p>Link</p>
+		<a class="button" href="">Click me</a>
+
+		<p>Button Element</p>
+		<button type="submit" class="button">Submit Form</button>
+		<br />
+		<br />
+
+		<hr />
+		<h2>Lists</h2>
+
+		<ol>
+			<li><a href="">Ordered list item</a></li>
+			<li><a href="">Ordered list item</a></li>
+			<li><a href="">Ordered list item</a></li>
+			<li><a href="">Ordered list item</a></li>
+			<li><a href="">Ordered list item</a></li>
+			<li><a href="">Ordered list item</a></li>
+		</ol>
+
+		<ul>
+			<li><a href="">Unordered list item</a></li>
+			<li><a href="">Unordered list item</a></li>
+			<li><a href="">Unordered list item</a></li>
+			<li><a href="">Unordered list item</a></li>
+			<li><a href="">Unordered list item</a></li>
+			<li><a href="">Unordered list item</a></li>
+		</ul>
+
+		<hr />
+		<blockquote>
+			<p>
+				I don't think the human race will survive the next thousand years,
+				unless we spread into space. There are too many accidents that can
+				befall life on a single planet. But I'm an optimist. We will reach out
+				to the stars.
+			</p>
+			<cite><a href="/"> -Stephen Hawking</a>, 2001</cite>
+		</blockquote>
+
+		<hr />
+		<h2>Pagination</h2>
+
+		<ul class="pagination">
+			<li class="disabled"><span>«</span></li>
+			<li class="active"><span>1</span></li>
+			<li><a href="/articles?page=2">2</a></li>
+			<li><a href="/articles?page=3">3</a></li>
+			<li><a href="/articles?page=2" rel="next">»</a></li>
+		</ul>
+	</main>
+</BaseLayout>
