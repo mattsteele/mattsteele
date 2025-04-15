@@ -4,12 +4,28 @@ import { Image } from "astro:assets";
 import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 import EmailIcon from "../assets/svgs/email.svg";
 import LaptopIcon from "../assets/svgs/laptop.svg";
+import PrintIcon from "../assets/svgs/print.svg";
 ---
 
 <BaseLayout title="Resume | Matt Steele" description="Resume Matt Steele">
 	<div class="flex dark:text-white">
 		<!-- Sidebar -->
-		<aside class="bg-slate-500 w-1/5 p-6"></aside>
+		<aside class="bg-slate-500 w-1/5 p-6 print:hidden">
+			<div class="flex justify-self-end pt-4 pr-6">
+				<button
+					class="text-white hover:text-rose-700 dark:hover:text-gray-300 hover:cursor-pointer"
+					onclick="handlePrint()"
+				>
+					<PrintIcon
+						width="28px"
+						height="28px"
+						fill="white"
+						class=""
+						aria-label="Print Resume"
+					/>
+				</button>
+			</div>
+		</aside>
 
 		<!-- Main Content -->
 		<div class="mt-12 flex-1">
@@ -278,9 +294,15 @@ import LaptopIcon from "../assets/svgs/laptop.svg";
 				</section>
 			</main>
 
-			<footer class="bg-gray-800 p-10">
+			<footer class="bg-gray-800 p-10 print:hidden">
 				<p class="text-white">Last updated: 4.4.2025</p>
 			</footer>
 		</div>
 	</div>
 </BaseLayout>
+
+<script is:inline>
+	function handlePrint() {
+		window.print();
+	}
+</script>
