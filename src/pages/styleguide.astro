@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="About | Matt Steele" description="About Matt Steele">
-	<main class="flex flex-col h-screen items-center justify-center fade-in">
+	<main class="m-48">
 		<h1>Styleguide</h1>
 
 		<h2>Colors</h2>
@@ -129,3 +129,88 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		</ul>
 	</main>
 </BaseLayout>
+
+<style>
+	.button {
+		transition: none;
+		-moz-transition: none;
+		-webkit-transition: none;
+		-o-transition: none;
+		display: inline-block;
+		text-decoration: none;
+		background-color: rgba(224, 95, 88, 1);
+		padding: 12px 25px;
+		line-height: 1em;
+		color: white;
+		text-transform: uppercase;
+		font-weight: normal;
+		border: none;
+		font-family: $font-sans-serif;
+		font-weight: bold;
+		font-size: 22px;
+		background-image: linear-gradient(
+			to left,
+			transparent,
+			transparent 50%,
+			rgb(53, 53, 53) 50%,
+			rgb(53, 53, 53)
+		);
+		background-position: 99% 0;
+		background-size: 205% 100%;
+		transition: all 0.25s ease-in-out;
+		@media only screen and (max-width: 900px) {
+			font-size: 22px;
+			width: 100%;
+		}
+		&:hover {
+			padding: 12px 25px;
+			background-position: 0 0;
+			cursor: pointer;
+		}
+	}
+
+	.section__color {
+		display: flex;
+		justify-content: space-evenly;
+		margin-bottom: 4em;
+	}
+
+	.color-chip-wrapper {
+		margin: 0 auto;
+		border: 1px solid var(--gray-two);
+		padding: 1em;
+	}
+
+	.color-chip {
+		height: 130px;
+		width: 130px;
+		margin: 0 auto;
+	}
+
+	.blue-one-chip {
+		background-color: var(--blue-one);
+	}
+	.blue-two-chip {
+		background-color: var(--blue-two);
+	}
+	.blue-three-chip {
+		background-color: var(--blue-three);
+	}
+	.blue-four-chip {
+		background-color: var(--blue-four);
+	}
+
+	.red-one-chip {
+		background-color: var(--red-one);
+	}
+	.red-two-chip {
+		background-color: var(--red-two);
+	}
+
+	.gray-one-chip {
+		background-color: var(--gray-one);
+	}
+	.gray-two-chip {
+		background-color: var(--gray-two);
+	}
+</style>
