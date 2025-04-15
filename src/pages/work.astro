@@ -13,42 +13,31 @@ const projects = (await getCollection("work")).sort(
 	title="Work | Matt Steele"
 	description="Matt Steele's most recent work"
 >
-	<div class="m-16 stack gap-20">
-		<main class="wrapper stack gap-8">
-			<div
-				class="bg-gray-100 p-8 rounded-tr-sm rounded-br-sm border-l-[10px] border-solid border-rose-600 mb-7 dark:text-white dark:border-gray-300 dark:bg-gray-500"
-			>
-				<p class="mt-0
-				text-lg">
-					<b>Note:</b> In recent years, my focus has been on developing design systems
-					and creating prototypes for JavaScript-based applications. Due to the proprietary
-					nature of this work, it cannot be shared publicly. Below is earlier work.
-				</p>
-			</div><!--- .note -->
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
-		</main>
-	</div>
-
-	<style>
-		.note {
-			background-color: var(--gray-one);
-			padding: 2rem;
-			border-top-right-radius: 2px;
-			border-bottom-right-radius: 2px;
-			border-left: 10px solid var(--red-one);
-			margin-bottom: 5rem;
-			p {
-				margin-top: 0;
-				font-size: 18px;
-			}
-		}
-	</style>
+	<main class="flex flex-col items-center my-24">
+		<div class="flex flex-col items-center max-w-7xl">
+			<div class="stack gap-20 max-w-6xl m-16">
+				<div class="wrapper stack gap-8">
+					<div
+						class="bg-gray-100 p-8 rounded-tr-sm rounded-br-sm border-l-4 border-rose-600 mb-7 dark:text-white dark:border-gray-300 dark:bg-gray-500"
+					>
+						<p class="text-lg">
+							<b>Note:</b> In recent years, my focus has been on developing design
+							systems and creating prototypes for JavaScript-based applications.
+							Due to the proprietary nature of this work, it cannot be shared publicly.
+							Below is earlier work.
+						</p>
+					</div><!--- .note -->
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+			</div>
+		</div>
+	</main>
 </BaseLayout>

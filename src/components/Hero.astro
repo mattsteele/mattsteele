@@ -12,7 +12,9 @@ const { align = "center", tagline, title } = Astro.props;
 	class={`hero stack gap-4 ${align === "start" ? "text-left" : "text-center"}`}
 >
 	<div class="stack gap-2">
-		<h1 class="text-3xl md:text-5xl text-gray-100 max-w-[37ch] mx-auto">
+		<h1
+			class="dark:text-white text-3xl md:text-5xl text-black max-w-[37ch] mx-auto"
+		>
 			{title}
 		</h1>
 		{tagline && <p class="text-lg max-w-[37ch] mx-auto">{tagline}</p>}

@@ -6,9 +6,12 @@ img_alt: "Screenshot of the ACES Editors homepage showcasing their resources and
 description: |
   ACES is a trusted leader in the editing community, dedicated to advancing the profession through education, advocacy, and collaboration. Their platform empowers editors with resources, training, and opportunities to excel in their craft.
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - Front-end Development
+  - Project Launch
+  - Craft CMS Development
+external_site_link: https://aceseditors.org/
+work_with_company_url: https://clover.partners
+work_with_company_name: Clover Partners
 ---
 
 ACES is an internationally recognized authority and representative for professional copy editors. Through their membership they promote best practices, training, scholarships and an annual conference to their members.

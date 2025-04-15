@@ -12,6 +12,9 @@ export const collections = {
 			tags: z.array(z.string()),
 			img: z.string(),
 			img_alt: z.string().optional(),
+			external_site_link: z.string().optional(),
+			work_with_company_url: z.string().optional(),
+			work_with_company_name: z.string().optional(),
 		}),
 	}),
 };

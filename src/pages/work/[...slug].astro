@@ -3,8 +3,8 @@ import { type CollectionEntry, getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
-import Icon from "../../components/Icon.astro";
 import Pill from "../../components/Pill.astro";
+import ArrowLeftIcon from "../../assets/svgs/arrow-left.svg";
 import { render } from "astro:content";
 
 interface Props {
@@ -33,15 +33,15 @@ const { Content } = await render(entry);
 				<div class="wrapper flex flex-col gap-2">
 					<a
 						class="hidden md:block self-start text-decoration-none hover:text-decoration-underline"
-						href="/work/"><Icon icon="arrow-left" /> Work</a
+						href="/work/"
 					>
+						<ArrowLeftIcon width="20px" height="20px" fill="white" />
+						Work
+					</a>
 					<Hero title={entry.data.title} align="start">
 						<div
 							class="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start"
 						>
-							<div class="flex gap-2">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-							</div>
 							<p class="text-lg max-w-prose">{entry.data.description}</p>
 						</div>
 					</Hero>
@@ -61,12 +61,38 @@ const { Content } = await render(entry);
 					<div>
 						<Content />
 					</div>
+
+					<div class="flex gap-2">
+						{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+					</div>
+					{
+						entry.data.external_site_link && (
+							<a
+								class="button"
+								rel="noopener noreferer"
+								href={entry.data.external_site_link}
+							>
+								Visit Site
+							</a>
+						)
+					}
+
+					{
+						entry.data.work_with_company_url && (
+							<p>
+								Work done with{" "}
+								<a
+									rel="noopener noreferer"
+									href={entry.data.work_with_company_url}
+									target="_blank"
+								>
+									{entry.data.work_with_company_name}
+								</a>
+							</p>
+						)
+					}
 				</div>
 			</main>
 		</div>
 	</div>
 </BaseLayout>
-
-<style>
-	/* Removed custom CSS in favor of TailwindCSS classes */
-</style>
