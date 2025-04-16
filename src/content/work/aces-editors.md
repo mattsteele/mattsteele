@@ -1,6 +1,6 @@
 ---
 title: ACES | International Society of Editors
-publishDate: 2019-12-01 00:00:00
+publishDate: 2025-04-10 00:00:00
 img: /src/assets/images/work-images/aces-featured.jpg
 img_alt: "Screenshot of the ACES Editors homepage showcasing their resources and services for professional editors."
 description: |

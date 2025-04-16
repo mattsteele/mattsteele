@@ -7,13 +7,3 @@
 Theme variables are special CSS variables defined using the @theme directive that influence which utility classes exist in your project. */
 @theme {
 }
-
-p {
-	font-size: 1.25rem;
-}
-
-@media print {
-	p {
-		font-size: 0.75rem;
-	}
-}

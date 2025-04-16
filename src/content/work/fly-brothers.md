@@ -1,6 +1,6 @@
 ---
 title: Fly Brothers | Helicopter Flight School
-publishDate: 2020-03-02 00:00:00
+publishDate: 2024-12-10 00:00:00
 img: /src/assets/images/work-images/flybros-featured.jpg
 img_alt: A featured image showcasing the Fly Brothers brand, with vibrant colors symbolizing the dynamic and high-energy nature of helicopter flight training.
 description: |

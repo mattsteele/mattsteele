@@ -1,6 +1,6 @@
 ---
 title: White & Weddle | Oklahoma City Trial Lawyers
-publishDate: 2020-03-04 00:00:00
+publishDate: 2025-01-10 00:00:00
 img: /src/assets/images/work-images/ww-featured.jpg
 img_alt: A featured image showcasing the White & Weddle website design, highlighting a clean and professional layout with vibrant visuals.
 description: |

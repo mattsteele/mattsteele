@@ -1,6 +1,6 @@
 ---
 title: OREA | Oklahoma Retired Educators Association
-publishDate: 2019-12-01 00:00:00
+publishDate: 2025-02-10 00:00:00
 img: /src/assets/images/work-images/orea-featured.jpg
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: |

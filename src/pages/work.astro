@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
-import Grid from "../components/Grid.astro";
+// import Grid from "../components/Grid.astro";
 
 const projects = (await getCollection("work")).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -15,29 +15,25 @@ const projects = (await getCollection("work")).sort(
 >
 	<main class="flex flex-col items-center my-24">
 		<div class="flex flex-col items-center max-w-7xl">
-			<div class="stack gap-20 max-w-6xl m-16">
-				<div class="wrapper stack gap-8">
-					<div
-						class="bg-gray-100 p-8 rounded-tr-sm rounded-br-sm border-l-4 border-rose-600 mb-7 dark:text-white dark:border-gray-300 dark:bg-gray-500"
-					>
-						<p class="text-lg">
-							<b>Note:</b> In recent years, my focus has been on developing design
-							systems and creating prototypes for JavaScript-based applications.
-							Due to the proprietary nature of this work, it cannot be shared publicly.
-							Below is earlier work.
-						</p>
-					</div><!--- .note -->
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</div>
+			<div
+				class="bg-gray-100 p-8 rounded-tr-sm rounded-br-sm border-l-4 border-rose-600 mb-7 dark:text-white dark:border-gray-300 dark:bg-gray-500"
+			>
+				<p class="text-xl max-w-5xl">
+					<b>Note:</b> In recent years, my focus has been on developing design systems
+					and creating prototypes for JavaScript-based applications. Due to the proprietary
+					nature of this work, it cannot be shared publicly. Below is earlier work.
+				</p>
+			</div><!--- .note -->
+			<!-- <Grid variant="offset"> -->
+			<ul class="spacing-10">
+				{
+					projects.map((project) => (
+						<li class="py-15 border-b-1 border-gray-300 last-of-type:border-b-0">
+							<PortfolioPreview project={project} />
+						</li>
+					))
+				}
+			</ul>
 		</div>
 	</main>
 </BaseLayout>
