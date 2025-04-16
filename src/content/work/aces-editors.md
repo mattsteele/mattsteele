@@ -18,8 +18,6 @@ ACES is an internationally recognized authority and representative for professio
 
 Their new website allows them to share all the various types of services they offer:
 
-### Project Involvement
-
 - Annual Conference information
 - Scholarship information
 - Editors for Hire Directory

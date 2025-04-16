@@ -1,8 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-
+import ExternalLinkIcon from "../../assets/svgs/external-link.svg";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.astro";
 import Pill from "../../components/Pill.astro";
 import { render } from "astro:content";
 
@@ -24,52 +23,57 @@ const { Content } = await render(entry);
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
 	<div class="flex my-24">
-		<div class="mx-auto max-w-4xl">
-			<header>
-				<Hero title={entry.data.title} align="start">
-					<div class="border-2 border-solid border-red-900">
-						<p class="text-lg">
-							{entry.data.description}
-						</p>
-					</div>
-				</Hero>
-			</header>
-
-			<main
-				class="flex flex-col mx-auto border-2 border-solid border-green-900"
-			>
+		<div class="mx-auto max-w-6xl">
+			<main class="flex flex-col mx-auto">
+				<h2 class="text-5xl my-9 text-center font-black dark:text-white">
+					{entry.data.title}
+				</h2>
 				{
 					entry.data.img && (
 						<img
-							class="rounded-lg shadow-lg border border-gray-700"
+							class="my-5 border border-gray-700"
 							src={entry.data.img}
 							alt={entry.data.img_alt || ""}
 						/>
 					)
 				}
-				<div class="prose prose-invert">
+
+				<div
+					class="*:text-xl *:py-2 [&_h3]:text-2xl *:ul *:list-disc *:list-inside"
+				>
 					<Content />
 				</div>
-				<div class="flex flex-wrap gap-2">
+
+				<h3 class="font-medium text-xl mt-5">Project Involvement:</h3>
+				<div class="flex flex-wrap gap-4 my-5">
 					{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 				</div>
 				{
 					entry.data.external_site_link && (
 						<a
-							class="inline-block bg-red-600 text-white text-sm font-bold py-2 px-4 rounded hover:bg-red-700 transition"
+							class="button flex flex-row justify-center bg-gray-600 uppercase max-w-64 rounded-lg text-white text-xl my-8 py-4 px-6"
 							rel="noopener noreferrer"
 							href={entry.data.external_site_link}
 						>
-							Visit Site
+							<span class="mr-1">Visit Site</span>
+
+							<ExternalLinkIcon
+								width="14px"
+								height="14px"
+								class="fill-current"
+							/>
 						</a>
 					)
 				}
 				{
 					entry.data.work_with_company_url && (
-						<p class="text-sm text-gray-400">
+						<p>
 							Work done with
 							<a
-								class="text-blue-400 hover:underline"
+								class="border-b-2 
+								border-dashed 
+								border-red-500 
+								hover:bg-red-200"
 								rel="noopener noreferrer"
 								href={entry.data.work_with_company_url}
 								target="_blank"
@@ -83,3 +87,21 @@ const { Content } = await render(entry);
 		</div>
 	</div>
 </BaseLayout>
+
+<style>
+	.button {
+		background-image: linear-gradient(
+			to left,
+			transparent,
+			transparent 50%,
+			rgb(199, 0, 54) 50%,
+			rgb(199, 0, 54)
+		);
+		background-position: 99% 0;
+		background-size: 205% 100%;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			background-position: 0 0;
+		}
+	}
+</style>
