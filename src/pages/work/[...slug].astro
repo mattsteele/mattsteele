@@ -51,7 +51,7 @@ const { Content } = await render(entry);
 				{
 					entry.data.external_site_link && (
 						<a
-							class="button flex flex-row justify-center bg-gray-600 uppercase max-w-64 rounded-lg text-white text-xl my-8 py-4 px-6"
+							class="button flex flex-row justify-center bg-gray-600 uppercase max-w-40 rounded-lg text-white text-xl my-8 py-4 px-6"
 							rel="noopener noreferrer"
 							href={entry.data.external_site_link}
 						>
@@ -73,7 +73,10 @@ const { Content } = await render(entry);
 								class="border-b-2 
 								border-dashed 
 								border-red-500 
-								hover:bg-red-200"
+								hover:bg-red-200
+								dark:border-gray-300 
+								dark:hover:bg-gray-500
+								"
 								rel="noopener noreferrer"
 								href={entry.data.work_with_company_url}
 								target="_blank"

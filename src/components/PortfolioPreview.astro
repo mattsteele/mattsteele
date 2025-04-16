@@ -8,8 +8,11 @@ interface Props {
 const { data, id } = Astro.props.project;
 ---
 
-<a class="listing-item flex flex-col group" href={`/work/${id}`}>
-	<h2 class="title font-black text-4xl py-4 group-hover:text-rose-700">
+<a
+	class="listing-item flex flex-col group p-12 border-2 border-transparent hover:border-2 hover:border-rose-700 dark:hover:border-gray-300"
+	href={`/work/${id}`}
+>
+	<h2 class="title font-black text-4xl py-4">
 		{data.title}
 	</h2>
 	<img
