@@ -7,8 +7,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://www.mattsteele.dev',
-  experimental: {
-    svg: true,
-  },
+  site: 'https://www.mattsteele.dev'
 });
