@@ -1,7 +1,7 @@
 ---
 title: ACES | International Society of Editors
 publishDate: 2025-04-10 00:00:00
-img: /src/assets/images/work-images/aces-featured.jpg
+img: /assets/images/work-images/aces-featured.jpg
 img_alt: "Screenshot of the ACES Editors homepage showcasing their resources and services for professional editors."
 description: |
   ACES is a trusted leader in the editing community, dedicated to advancing the profession through education, advocacy, and collaboration. Their platform empowers editors with resources, training, and opportunities to excel in their craft.
