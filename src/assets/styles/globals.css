@@ -1,3 +1,53 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@media print {
+	h2 {
+		color: black;
+		/* font-size: 22px; */
+	}
+	h3 {
+		color: black;
+		/* font-size: 18px; */
+	}
+	p {
+		color: black;
+		/* font-size: 14px; */
+	}
+}
+
+/* It's not ideal to put these in the global styles, but I'm blocked by Tailwind's inability to style the background-position to 0 0 */
+.button {
+	background-image: linear-gradient(
+		to left,
+		transparent,
+		transparent 50%,
+		rgb(199, 0, 54) 50%,
+		rgb(199, 0, 54)
+	);
+	background-position: 99% 0;
+	background-size: 205% 100%;
+	transition: all 0.25s ease-in-out;
+	&:hover {
+		background-position: 0 0;
+	}
+}
+
+.dark {
+	.button {
+		background-image: linear-gradient(
+			to left,
+			transparent,
+			transparent 50%,
+			rgb(153, 161, 175) 50%,
+			rgb(153, 161, 175)
+		);
+		background-position: 99% 0;
+		background-size: 205% 100%;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			background-position: 0 0;
+		}
+	}
+}
