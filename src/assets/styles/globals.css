@@ -1,9 +1,1 @@
 @import "tailwindcss";
-
-/* Uncomment this to force light mode during development */
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* 
-Theme variables are special CSS variables defined using the @theme directive that influence which utility classes exist in your project. */
-@theme {
-}
