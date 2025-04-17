@@ -1,5 +1,7 @@
 # Matt Steele: Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21825428-ad07-4f65-b2a0-fd72783f8747/deploy-status)](https://app.netlify.com/sites/peaceful-albattani-1d96dc/deploys)
+
 My [personal site](https://mattsteele.dev) built with [Astro](https://astro.build/) &amp; [TailwindCSS](https://tailwindcss.com/). Hosted on [Netlify](https://netlify.com/).
 
 ## 🧞 Commands
