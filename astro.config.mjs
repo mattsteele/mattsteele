@@ -9,7 +9,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
+  compressHTML: true,
   site: 'https://www.mattsteele.dev',
   integrations: [partytown({ config: { forward: ['dataLayer.push'] } })],
 });
