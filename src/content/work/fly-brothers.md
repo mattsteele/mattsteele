@@ -1,7 +1,7 @@
 ---
 title: Fly Brothers | Helicopter Flight School
 publishDate: 2024-12-10 00:00:00
-img: "../../pages/images/flybros-featured.jpg"
+img: "./images/flybros-featured.jpg"
 img_alt: A featured image showcasing the Fly Brothers brand, with vibrant colors symbolizing the dynamic and high-energy nature of helicopter flight training.
 description: |
   Fly Brothers offers a comprehensive and immersive flight training experience, combining classroom instruction with hands-on practice. With a focus on efficiency and excellence, the program equips aspiring pilots with the skills and certifications needed to soar into their aviation careers. Whether you're a student aiming to earn your pilot's license or a company seeking professional flight services, Fly Brothers delivers expertise and reliability at every altitude.
