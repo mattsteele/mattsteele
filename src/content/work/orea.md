@@ -1,7 +1,7 @@
 ---
 title: OREA | Oklahoma Retired Educators Association
 publishDate: 2025-02-10 00:00:00
-img: /assets/images/work-images/orea-featured.jpg
+img: "../../pages/images/orea-featured.jpg"
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: |
   The Oklahoma Retired Educators Association (OREA) is dedicated to supporting retired teachers through advocacy, resources, and community engagement. Their mission is to ensure that retired educators receive the recognition and benefits they deserve while staying informed and connected. OREA's website serves as a hub for news, events, and tools to empower members to remain active and involved in shaping the future of education policy.

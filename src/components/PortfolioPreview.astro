@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 interface Props {
 	project: CollectionEntry<"work">;
@@ -15,11 +16,9 @@ const { data, id } = Astro.props.project;
 	<h2 class="title font-black md:text-4xl text-xl py-4">
 		{data.title}
 	</h2>
-	<img
+	<Image
 		class="group-hover:opacity-75"
 		src={data.img}
 		alt={data.img_alt || ""}
-		loading="lazy"
-		decoding="async"
 	/>
 </a>

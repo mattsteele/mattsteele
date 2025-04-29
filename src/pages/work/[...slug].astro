@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import ExternalLinkIcon from "../../assets/svgs/external-link.svg";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Pill from "../../components/Pill.astro";
@@ -32,7 +33,7 @@ const { Content } = await render(entry);
 				</h2>
 				{
 					entry.data.img && (
-						<img
+						<Image
 							class="my-5 border border-gray-700"
 							src={entry.data.img}
 							alt={entry.data.img_alt || ""}
