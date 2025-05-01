@@ -10,10 +10,12 @@ const { data, id } = Astro.props.project;
 ---
 
 <a
-	class="listing-item flex flex-col group p-2 md:p-8 border-2 border-transparent hover:border-2 hover:border-rose-700 dark:hover:border-gray-300"
+	class="flex flex-col group p-2 md:p-8 border-2 border-transparent hover:border-2 hover:border-rose-700 dark:hover:border-gray-300"
 	href={`/work/${id}`}
 >
-	<h2 class="title font-black md:text-4xl text-xl py-4">
+	<h2
+		class="text-xl md:text-4xl my-4 md:my-9 text-center font-black dark:text-white"
+	>
 		{data.title}
 	</h2>
 	<Image
