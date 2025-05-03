@@ -23,7 +23,7 @@ const { Content } = await render(entry);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-	<div class="flex flex-col md:my-24 my-10 mx-8">
+	<div class="flex flex-col md:my-24 my-12 mx-8">
 		<main class="flex flex-col justify-center items-center max-w-5xl mx-auto">
 			<h2
 				class="text-xl md:text-4xl my-4 md:my-9 text-center font-black dark:text-white"
@@ -55,13 +55,14 @@ const { Content } = await render(entry);
 							class="button flex flex-row justify-center bg-gray-600 uppercase max-w-40 rounded-lg text-white text-xl my-8 py-4 px-6"
 							rel="noopener noreferrer"
 							href={entry.data.external_site_link}
+							target="_blank"
 						>
 							<span class="mr-1">Visit Site</span>
 
 							<ExternalLinkIcon
 								width="14px"
 								height="14px"
-								class="fill-current"
+								class="fill-current mt-0.75"
 							/>
 						</a>
 					)
