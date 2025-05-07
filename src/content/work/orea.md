@@ -7,7 +7,7 @@ description: |
   The Oklahoma Retired Educators Association (OREA) is dedicated to supporting retired teachers through advocacy, resources, and community engagement. Their mission is to ensure that retired educators receive the recognition and benefits they deserve while staying informed and connected. OREA's website serves as a hub for news, events, and tools to empower members to remain active and involved in shaping the future of education policy.
 tags:
   - Front-end Development
-  - Craft CMS Integration
+  - Custom CMS Integration
   - Security
   - Maintenance
 external_site_link: https://orea.org/

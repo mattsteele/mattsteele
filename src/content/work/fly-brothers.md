@@ -7,7 +7,7 @@ description: |
   Fly Brothers offers a comprehensive and immersive flight training experience, combining classroom instruction with hands-on practice. With a focus on efficiency and excellence, the program equips aspiring pilots with the skills and certifications needed to soar into their aviation careers. Whether you're a student aiming to earn your pilot's license or a company seeking professional flight services, Fly Brothers delivers expertise and reliability at every altitude.
 tags:
   - Front-end Development
-  - Craft CMS Development
+  - Custom CMS Development
   - Security
   - Maintenance
 work_with_company_url: https://clover.partners

@@ -7,7 +7,7 @@ description: |
  We collaborated with White & Weddle, P.C. to design and develop a professional online presence that reflects their trusted reputation. The website highlights their legal expertise, showcases their team, and provides potential clients with clear, accessible information about their services.
 tags:
   - Front-end Development
-  - Craft CMS Integration
+  - Custom CMS Integration
   - Security
   - Maintenance
 external_site_link: https://whiteandweddle.com/

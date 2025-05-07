@@ -8,7 +8,7 @@ description: |
 tags:
   - eCommerce Development
   - Front-end Development
-  - Craft CMS Integration
+  - Custom CMS Integration
   - Security
 external_site_link: https://unitedslings.com/
 work_with_company_url: https://clover.partners

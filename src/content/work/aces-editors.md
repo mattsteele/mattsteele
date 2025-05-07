@@ -8,7 +8,7 @@ description: |
 tags:
   - Front-end Development
   - Project Launch
-  - Craft CMS Development
+  - Custom CMS Development
 external_site_link: https://aceseditors.org/
 work_with_company_url: https://clover.partners
 work_with_company_name: Clover Partners
