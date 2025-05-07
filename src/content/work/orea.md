@@ -12,6 +12,7 @@ external_site_link: https://orea.org/
 work_with_company_url: https://clover.partners
 work_with_company_name: Clover Partners
 ---
+
 The Oklahoma Retired Educators Association (OREA) is a vibrant community dedicated to championing the rights and benefits of retired teachers. Organized across multiple districts, OREA works hand-in-hand with state leaders to ensure retired educators are celebrated and supported in their well-earned retirement.
 
 With the launch of their new website, OREA members now have a powerful tool at their fingertips. The site keeps members up-to-date with the latest news impacting their community, provides easy access to district and state representatives, and offers clear pathways to get involved in shaping the future of education. Members can also explore opportunities to be recognized for their contributions through OREA’s prestigious awards program.
