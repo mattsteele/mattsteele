@@ -2,9 +2,7 @@
 title: Fly Brothers | Helicopter Flight School
 publishDate: 2024-12-10 00:00:00
 img: "./images/flybros-featured.jpg"
-img_alt: A featured image showcasing the Fly Brothers brand, with vibrant colors symbolizing the dynamic and high-energy nature of helicopter flight training.
-description: |
-  Fly Brothers offers a comprehensive and immersive flight training experience, combining classroom instruction with hands-on practice. With a focus on efficiency and excellence, the program equips aspiring pilots with the skills and certifications needed to soar into their aviation careers. Whether you're a student aiming to earn your pilot's license or a company seeking professional flight services, Fly Brothers delivers expertise and reliability at every altitude.
+img_alt: "Featured image for Fly Brothers Helicopter Flight School, showing a helicopter in flight against a bright blue sky, symbolizing the thrill and professionalism of aviation training."
 tags:
   - Front-end Development
   - Custom CMS Development
@@ -13,7 +11,6 @@ tags:
 work_with_company_url: https://clover.partners
 work_with_company_name: Clover Partners
 ---
+Designed for clarity and ease of use, the site empowers prospective students to explore their accelerated training programs, which combine classroom learning with real-world flight experience. Aspiring pilots can quickly earn their licenses and launch their aviation careers with confidence, embracing the motto "Working At Altitude."
 
-Fly Brothers is a flight school and pilots-for-hire program that gives students both classroom training and real world experience. Students receive an accelerated training program that allows them to earn their pilots license quickly and begin "Working At Altitude".
-
-Prospective students and companies looking for information are easily able to navigate the different types of services Fly Brothers offers and see the perks offered when earning your pilots license.
+Companies and individuals seeking professional flight services will find everything they need at their fingertips. The streamlined navigation highlights the full range of services and showcases the unique benefits of training with Fly Brothers. It's more than a website—it's your gateway to soaring success!

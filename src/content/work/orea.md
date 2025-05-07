@@ -2,9 +2,7 @@
 title: OREA | Oklahoma Retired Educators Association
 publishDate: 2025-02-10 00:00:00
 img: "./images/orea-featured.jpg"
-img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
-description: |
-  The Oklahoma Retired Educators Association (OREA) is dedicated to supporting retired teachers through advocacy, resources, and community engagement. Their mission is to ensure that retired educators receive the recognition and benefits they deserve while staying informed and connected. OREA's website serves as a hub for news, events, and tools to empower members to remain active and involved in shaping the future of education policy.
+img_alt: "Screenshot of the OREA website homepage, showcasing a modern design with navigation menus, featured news, and quick access to member resources."
 tags:
   - Front-end Development
   - Custom CMS Integration
@@ -14,9 +12,8 @@ external_site_link: https://orea.org/
 work_with_company_url: https://clover.partners
 work_with_company_name: Clover Partners
 ---
+The Oklahoma Retired Educators Association (OREA) is a vibrant community dedicated to championing the rights and benefits of retired teachers. Organized across multiple districts, OREA works hand-in-hand with state leaders to ensure retired educators are celebrated and supported in their well-earned retirement.
 
-The Oklahoma Retired Educators Association is a professional organization that advocates for the benefits of retired teachers. The group is organized by multiple districts that collectively work with the state government to make sure teachers are taken care of in their golden years.
+With the launch of their new website, OREA members now have a powerful tool at their fingertips. The site keeps members up-to-date with the latest news impacting their community, provides easy access to district and state representatives, and offers clear pathways to get involved in shaping the future of education. Members can also explore opportunities to be recognized for their contributions through OREA’s prestigious awards program.
 
-Multiple awards are given throughout the year to members for their contributions to OREA. Additionally, they hold many meetings at both the district and state level to forward their agenda.
-
-The website allows them to keep members informed of recent news that affects them, see who their representatives are, and find out how they can be active in the association.
+This modern platform empowers retired educators to stay connected, informed, and engaged like never before, reinforcing OREA’s mission to honor and support those who dedicated their lives to teaching.
