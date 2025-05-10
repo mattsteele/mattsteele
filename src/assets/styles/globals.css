@@ -3,17 +3,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @media print {
-	h2 {
-		color: black;
-		/* font-size: 22px; */
-	}
+	p,
+	h2,
 	h3 {
 		color: black;
-		/* font-size: 18px; */
-	}
-	p {
-		color: black;
-		/* font-size: 14px; */
 	}
 }
 

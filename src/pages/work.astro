@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
-// import Grid from "../components/Grid.astro";
 
 const projects = (await getCollection("work")).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -23,8 +22,7 @@ const projects = (await getCollection("work")).sort(
 					and creating prototypes for JavaScript-based applications. Due to the proprietary
 					nature of this work, it cannot be shared publicly. Below is earlier work.
 				</p>
-			</div><!--- .note -->
-			<!-- <Grid variant="offset"> -->
+			</div>
 			<ul class="spacing-10">
 				{
 					projects.map((project) => (
