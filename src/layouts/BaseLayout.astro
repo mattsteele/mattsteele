@@ -1,7 +1,6 @@
 ---
 // Transition Imports
-import { ClientRouter } from "astro:transitions";
-import { fade } from "astro:transitions";
+import { ClientRouter, fade } from "astro:transitions";
 
 // Component Imports
 import MainHead from "../components/MainHead.astro";
@@ -30,13 +29,10 @@ const { title, description } = Astro.props;
 			document.documentElement.setAttribute("data-theme", theme);
 		</script>
 	</head>
-	<body
-		transition:animate={fade({ duration: 250 })}
-		class="bg:white dark:bg-gray-800 dark:text-gray-200 text-gray-800"
-	>
+	<body class="bg:white dark:bg-gray-800 dark:text-gray-200 text-gray-800">
 		<div class="antialiased flex flex-col h-screen">
 			<Nav />
-			<slot />
+			<slot transition:animate={fade({ duration: "0.25s" })} />
 			<Footer />
 		</div>
 
