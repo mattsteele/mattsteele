@@ -34,7 +34,7 @@ const isCurrentPage = (href: string) => {
 			<ul class="w-full flex justify-between">
 				{
 					textLinks.map(({ label, href }) => (
-						<li>
+						<li class="max-h-[25px]">
 							<a
 								aria-current={isCurrentPage(href) ? "page" : null}
 								class="hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative pb-4 px-1"
