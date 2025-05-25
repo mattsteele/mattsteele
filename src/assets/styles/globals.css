@@ -4,9 +4,16 @@
 
 @media print {
 	p,
+	p > a,
+	p > a > span,
+	a > span,
 	h2,
-	h3 {
+	h3,
+	ul > li {
 		color: black;
+	}
+	svg {
+		display: none;
 	}
 }
 

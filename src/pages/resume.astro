@@ -30,30 +30,21 @@ import PrintIcon from "../assets/svgs/print.svg";
 		<div class="mt-6 md:mt-12 flex-1">
 			<header class="mx-8 md:mx-20">
 				<div class="flex items-center mb-6">
-					<!-- <div class="mr-8">
-						<Image
-							src={mattSteeleIllustrated}
-							width="150"
-							height="150"
-							alt="Matt Steele Illustration"
-							class="rounded-full border-4"
-						/>
-					</div> -->
 					<div>
-						<h1 class="text-5xl font-bold">Matt Steele</h1>
+						<h1 class="text-5xl font-bold print:text-black">Matt Steele</h1>
 						<p class="text-xl mt-2">
 							<span>Senior Software Engineer</span>
 							<span class="mx-2" aria-hidden="true">·</span>
 							<span>Denver, CO</span>
 						</p>
-						<div class="flex items-center pt-4 space-x-6">
+						<div class="flex items-center pt-4 print:pt-0 space-x-6">
 							<a
 								aria-label="Email"
 								href="mailto:mattsteele@outlook.com"
 								class="flex items-center hover:underline"
 							>
 								<EmailIcon width="20px" height="20px" fill="white" />
-								<span class="ml-2">mattsteele@outlook.com</span>
+								<span class="ml-2 print:ml-0">mattsteele@outlook.com</span>
 							</a>
 							<a
 								aria-label="Website"
@@ -61,7 +52,7 @@ import PrintIcon from "../assets/svgs/print.svg";
 								class="flex items-center hover:underline"
 							>
 								<LaptopIcon width="20px" height="20px" fill="white" />
-								<span class="ml-2">mattsteele.dev</span>
+								<span class="ml-2 print:ml-0">mattsteele.dev</span>
 							</a>
 						</div>
 					</div>
@@ -70,21 +61,17 @@ import PrintIcon from "../assets/svgs/print.svg";
 
 			<main class="mx-8 md:mx-20">
 				<section class="mb-12 space-y-2 max-w-5xl">
-					<h2 class="text-3xl font-bold mb-6">About</h2>
+					<h2 class="text-3xl font-bold mb-6">Professional Summary</h2>
 					<hr class="border-gray-300 mb-4" />
 					<p class="text-lg leading-relaxed">
-						As a seasoned Software Engineer, I bring extensive experience in
-						designing and implementing robust design systems, developer tools,
-						and scalable web platforms. My focus is on empowering engineering
-						teams by creating seamless workflows, enhancing productivity, and
-						fostering collaboration through innovative tooling and architecture.
+						Software Engineer with extensive experience in design systems,
+						developer tools, and scalable web platforms. Proven ability to lead
+						cross-functional teams, optimize developer experience, and deliver
+						accessible, high-performance solutions using JavaScript-based
+						frameworks such as Vue, Angular, and React. Skilled in
+						documentation, collaboration, and implementing best practices for
+						modern web development.
 					</p>
-					<!-- <p class="text-lg leading-relaxed">
-						I excel at architecting intuitive, maintainable, and accessible
-						solutions that align with modern development standards. My approach
-						emphasizes scalability, performance, and a deep commitment to
-						delivering exceptional developer experiences.
-					</p> -->
 				</section>
 
 				<section class="mb-12 space-y-2 max-w-5xl">
@@ -94,36 +81,48 @@ import PrintIcon from "../assets/svgs/print.svg";
 					<article class="mb-10">
 						<div class="mb-4">
 							<p class="text-gray-500 tracking-wider mb-1 dark:text-white">
-								<time class="text-sm" datetime="2017-10-01">10/2020</time>
-								<span class="text-smuppercase mx-1">–</span>
+								<time class="text-sm" datetime="2020-10-01">10/2020</time>
+								<span class="text-sm uppercase mx-1">–</span>
 								<span class="text-sm uppercase">Present</span>
 							</p>
 							<h3 class="text-2xl font-semibold pb-1">
-								Senior Software Engineer - Design Systems
+								Senior Software Engineer – Design Systems
 							</h3>
-
 							<p class="text-sm dark:text-white">
 								<a
 									href="https://www.spectrum.net"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
+									>Charter Communications</a
 								>
-									Charter Communications
-								</a>
 								<span class="mx-1" aria-hidden="true">·</span>
 								<span>Denver, CO</span>
 							</p>
 						</div>
-						<p class="text-lg leading-relaxed">
-							My current work centers on enhancing Developer Experience (DX) by
-							managing a scalable design system that ensures consistent and
-							accessible interfaces. I prioritize creating detailed
-							documentation, fostering team collaboration, and developing tools
-							and libraries that simplify workflows. I leverage modern
-							frameworks like Angular and React to drive scalability and
-							efficiency.
-						</p>
+						<ul class="list-disc ml-6 text-lg leading-relaxed">
+							<li>
+								Manage and scale a company-wide design system to ensure
+								consistent, accessible user interfaces across multiple products.
+							</li>
+							<li>
+								Develop and maintain reusable component libraries using Angular
+								and React, improving developer efficiency and code quality.
+							</li>
+							<li>
+								Create comprehensive documentation and onboarding materials to
+								support engineering teams and drive adoption of best practices.
+							</li>
+							<li>
+								Collaborate with product, design, and engineering teams to
+								deliver solutions aligned with business goals and accessibility
+								standards.
+							</li>
+							<li>
+								Implement tools and automation to streamline workflows and
+								enhance developer experience (DX).
+							</li>
+						</ul>
 					</article>
 
 					<article class="mb-10">
@@ -134,31 +133,38 @@ import PrintIcon from "../assets/svgs/print.svg";
 								<span class="text-sm uppercase">10/2020</span>
 							</p>
 							<h3 class="text-2xl font-semibold pb-1">
-								Senior Software Engineer - Prototyping
+								Senior Software Engineer – Prototyping
 							</h3>
-
 							<p class="text-sm dark:text-white">
 								<a
 									href="https://www.spectrum.net"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
+									>Charter Communications</a
 								>
-									Charter Communications
-								</a>
 								<span class="mx-1" aria-hidden="true">·</span>
 								<span>Denver, CO</span>
 							</p>
 						</div>
-						<p class="text-lg leading-relaxed">
-							Developed and implemented prototypes and proof of concept (POC)
-							projects using Vue and Angular to test innovative ideas and
-							validate technical feasibility. Collaborated with cross-functional
-							teams to gather requirements, conduct research, and deliver
-							functional designs. Focused on creating intuitive user experiences
-							while ensuring thorough accessibility testing and performance
-							optimization across various devices and platforms.
-						</p>
+						<ul class="list-disc ml-6 text-lg leading-relaxed">
+							<li>
+								Designed and implemented prototypes and proof-of-concept (POC)
+								projects using Vue and Angular to validate new product ideas.
+							</li>
+							<li>
+								Worked with cross-functional teams to gather requirements,
+								conduct research, and deliver functional prototypes.
+							</li>
+							<li>
+								Focused on user experience (UX) and accessibility, ensuring
+								solutions met performance and usability standards.
+							</li>
+							<li>
+								Optimized applications for speed and scalability across multiple
+								devices and platforms.
+							</li>
+						</ul>
 					</article>
 
 					<article class="mb-10">
@@ -169,36 +175,43 @@ import PrintIcon from "../assets/svgs/print.svg";
 								<time class="text-sm" datetime="2017-10-01">10/2017</time>
 							</p>
 							<h3 class="text-2xl font-semibold pb-1">Senior Web Developer</h3>
-
 							<p class="text-sm dark:text-white">
 								<a
 									href="https://clover.partners/"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
+									>Clover Partners</a
 								>
-									Clover Partners
-								</a>
 								<span class="mx-1" aria-hidden="true">·</span>
 								<span>Denver, CO</span>
 							</p>
 						</div>
-						<p class="text-lg leading-relaxed">
-							Engineered custom client-facing applications utilizing JavaScript
-							and PHP, seamlessly integrated with Craft and Statamic CMS
-							platforms. Collaborated closely with clients to translate custom
-							designs and workflows into functional, user-centric solutions.
-							Delivered tailored eCommerce platforms, optimizing payment systems
-							and enhancing user experiences to drive engagement and
-							conversions.
-						</p>
+						<ul class="list-disc ml-6 text-lg leading-relaxed">
+							<li>
+								Developed custom client-facing web applications using JavaScript
+								and PHP, integrated with Craft and Statamic CMS platforms.
+							</li>
+							<li>
+								Translated client requirements and designs into functional,
+								user-centric solutions.
+							</li>
+							<li>
+								Delivered tailored eCommerce platforms, optimizing payment
+								systems and improving user experience to increase engagement and
+								conversions.
+							</li>
+							<li>
+								Collaborated with clients and internal teams to ensure project
+								success and satisfaction.
+							</li>
+						</ul>
 					</article>
 				</section>
 
 				<section class="mb-10 space-y-2 max-w-5xl">
 					<h2 class="text-3xl font-bold mb-6">Education</h2>
 					<hr class="border-gray-300 mb-4" />
-
 					<article>
 						<div>
 							<h3 class="text-2xl font-semibold pb-1">Bachelor of Fine Arts</h3>
@@ -208,18 +221,47 @@ import PrintIcon from "../assets/svgs/print.svg";
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
+									>Academy of Art University</a
 								>
-									Academy of Art University
-								</a>
 								<span class="mx-1" aria-hidden="true">·</span>
 								<span>San Francisco, CA</span>
 							</p>
 						</div>
 					</article>
 				</section>
+
+				<section class="mb-10 space-y-2 max-w-5xl">
+					<h2 class="text-3xl font-bold mb-6">Skills</h2>
+					<hr class="border-gray-300 mb-4" />
+					<ul class="list-disc ml-6 text-lg leading-relaxed">
+						<li>Design Systems</li>
+						<li>Developer Experience (DX)</li>
+						<li>Web Development</li>
+						<li>JavaScript, TypeScript</li>
+						<li>Angular, React, Vue</li>
+						<li>Accessibility</li>
+						<li>Component Libraries</li>
+						<li>Documentation</li>
+						<li>Cross-functional Collaboration</li>
+						<li>Performance Optimization</li>
+						<li>eCommerce Platforms</li>
+						<li>Content Management Systems (CMS's)</li>
+					</ul>
+				</section>
 			</main>
 			<footer class="bg-gray-800 p-10">
-				<p class="text-white">Last updated: 4/2025</p>
+				<p class="text-white">
+					Last updated: {
+						new Date(
+							import.meta.env.SITE_BUILD_TIME ||
+								import.meta.env.BUILD_TIME ||
+								Date.now()
+						).toLocaleDateString(undefined, {
+							month: "numeric",
+							year: "numeric",
+						})
+					}
+				</p>
 			</footer>
 		</div>
 	</div>
