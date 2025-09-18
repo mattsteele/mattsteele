@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/partytown": "^2.1.4",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.13.7",
+    "astro": "^5.13.8",
     "tailwindcss": "^4.1.13"
   }
 }
