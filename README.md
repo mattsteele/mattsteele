@@ -2,6 +2,12 @@
 
 My [personal site](https://mattsteele.dev) built with [Astro](https://astro.build/) &amp; [TailwindCSS](https://tailwindcss.com/). Hosted on [Cloudflare](https://www.cloudflare.com/).
 
+[![Astro](https://img.shields.io/badge/Astro-0C1222?style=for-the-badge&logo=astro&logoColor=FDFDFE)](https://astro.build/)
+
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-F38020?style=for-the-badge&logo=Cloudflare%20Pages&logoColor=white)](https://www.cloudflare.com/)
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
