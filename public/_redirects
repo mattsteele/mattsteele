@@ -1,0 +1,6 @@
+# Redirect trailing slashes
+/work /work/ 301
+/about /about/ 301
+
+# 404 fallback
+/* /404.html 404
