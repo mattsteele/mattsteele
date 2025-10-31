@@ -17,7 +17,7 @@ const isCurrentPage = (href: string) => {
 };
 ---
 
-<nav class="flex justify-between p-2 border-b-1 border-gray-300 print:hidden">
+<nav class="flex justify-between p-2 border-b border-gray-300 print:hidden">
 	<div class="self-start px-6">
 		<a href="/" aria-label="Link to home page">
 			<span class="sr-only">Matt Steele</span>
@@ -38,7 +38,7 @@ const isCurrentPage = (href: string) => {
 							<a
 								aria-current={isCurrentPage(href) ? "page" : null}
 								aria-label={`Navigate to ${label} page`}
-								class="hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative pb-4 px-1"
+								class="hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative py-4 px-1"
 								href={href}
 							>
 								{label}
@@ -53,7 +53,7 @@ const isCurrentPage = (href: string) => {
 			</ul>
 		</div>
 
-		<div class="ml-8 px-6 self-end border-l-1 border-gray-300">
+		<div class="ml-8 px-6 self-end border-l border-gray-300">
 			<ThemeToggle />
 		</div>
 	</div>
