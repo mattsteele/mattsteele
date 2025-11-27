@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-// import mattSteeleIllustrated from "../assets/images/mattsteele-illustrated.png";
 import EmailIcon from "../assets/svgs/email.svg";
 import LaptopIcon from "../assets/svgs/laptop.svg";
 import PrintIcon from "../assets/svgs/print.svg";
@@ -15,7 +14,7 @@ import PrintIcon from "../assets/svgs/print.svg";
 		<aside class="hidden md:block bg-slate-500 w-1/5 p-6 print:hidden">
 			<div class="flex justify-self-end pt-4 pr-6">
 				<button
-					class="text-white hover:text-gray-300 hover:cursor-pointer"
+					class="text-white hover:text-gray-300"
 					onclick="handlePrint()"
 				>
 					<PrintIcon

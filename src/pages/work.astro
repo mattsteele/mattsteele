@@ -3,11 +3,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
-interface Props {
-	title?: string;
-	description?: string;
-}
-
 const projects = await getCollection("work", ({ data }) => {
 	return !data.draft;
 });
@@ -19,23 +14,21 @@ projects.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueO
 	description="Matt Steele's most recent work"
 >
 	<main class="flex flex-col items-center my-12 md:my-24 mx-6">
-		<div class="flex flex-col items-center max-w-7xl">
-			<div
-				class="bg-gray-100 p-4 md:p-8 mx-4 rounded-tr-sm rounded-br-sm border-l-4 border-rose-600 dark:text-white dark:border-gray-300 dark:bg-gray-500"
-			>
-				<p class="text-md md:text-xl max-w-5xl">
-					<b>Note:</b> In recent years, my focus has been on developing design systems, creating prototypes for JavaScript-based applications, and improving the developer experience (DX). Due to the proprietary nature of this work, it cannot be shared publicly. Below is earlier work.
-				</p>
-			</div>
-			<ul class="space-y-10">
-				{
-					projects.map((project) => (
-						<li class="p-2 md:p-20 border-b-1 border-gray-300 last-of-type:border-b-0">
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</ul>
+		<div
+			class="bg-gray-100 p-4 md:p-8 rounded-tr-sm rounded-br-sm border-l-4 border-rose-600 dark:text-white dark:border-gray-300 dark:bg-gray-500"
+		>
+			<p class="text-md md:text-xl max-w-5xl">
+				<b>Note:</b> In recent years, my focus has been on developing design systems, creating prototypes for JavaScript-based applications, and improving the developer experience (DX). Due to the proprietary nature of this work, it cannot be shared publicly. Below is earlier work.
+			</p>
 		</div>
+		<ul class="space-y-10">
+			{
+				projects.map((project) => (
+					<li class="py-2 md:py-20 border-b border-gray-300 last-of-type:border-b-0 first-of-type:mt-10 md:first-of-type:mt-0">
+						<PortfolioPreview project={project} />
+					</li>
+				))
+			}
+		</ul>
 	</main>
 </BaseLayout>

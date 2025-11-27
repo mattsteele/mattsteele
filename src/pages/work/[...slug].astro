@@ -24,7 +24,7 @@ const { Content } = await render(entry);
 
 <BaseLayout title={entry.data.title} description={entry.data.title}>
 	<main class="md:my-24 my-12 mx-6">
-		<dev class="flex flex-col max-w-5xl mx-auto">
+		<div class="flex flex-col">
 			<h2
 				class="text-xl md:text-4xl my-4 md:my-9 text-center font-black dark:text-white"
 			>
@@ -72,13 +72,7 @@ const { Content } = await render(entry);
 						<p>
 							Work done with
 							<a
-								class="border-b-2 
-								border-dashed 
-								border-red-500 
-								hover:bg-red-200
-								dark:border-gray-300 
-								dark:hover:bg-gray-500
-								"
+								class="border-b-2 border-dashed border-red-500 hover:bg-red-200 dark:border-gray-300 dark:hover:bg-gray-500"
 								rel="noopener noreferrer"
 								href={entry.data.work_with_company_url}
 								target="_blank"
@@ -89,6 +83,6 @@ const { Content } = await render(entry);
 					)
 				}
 			</div>
-		</dev>
+		</div>
 	</main>
 </BaseLayout>
