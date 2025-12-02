@@ -14,6 +14,7 @@ export const collections = {
 			external_site_link: z.string().optional(),
 			work_with_company_url: z.string().optional(),
 			work_with_company_name: z.string().optional(),
+			draft: z.boolean().optional(),
 		}),
 	}),
 };
