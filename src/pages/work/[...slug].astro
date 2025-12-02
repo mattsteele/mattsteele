@@ -24,7 +24,7 @@ const { Content } = await render(entry);
 
 <BaseLayout title={entry.data.title} description={entry.data.title}>
 	<main class="md:my-24 my-12 mx-6">
-		<div class="flex flex-col">
+		<div class="flex flex-col items-center">
 			<h2
 				class="text-xl md:text-4xl my-4 md:my-9 text-center font-black dark:text-white"
 			>
@@ -41,7 +41,7 @@ const { Content } = await render(entry);
 			}
 
 			<div
-				class="*:text-xl *:py-2 [&_h3]:text-2xl *:ul *:list-disc *:list-inside"
+				class="*:text-xl *:py-2 [&_h3]:text-2xl *:ul *:list-disc *:list-inside max-w-[1006px]"
 			>
 				<Content />
 
