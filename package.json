@@ -9,9 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/partytown": "^2.1.4",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.18.0",
-    "tailwindcss": "^4.1.18"
+    "@astrojs/partytown": "^2.1.5",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^6.0.2",
+    "tailwindcss": "^4.2.1"
   }
 }
