@@ -17,10 +17,9 @@ const isCurrentPage = (href: string) => {
 };
 ---
 
-<nav class="flex justify-between p-2 border-b border-gray-300 print:hidden">
+<nav class="flex justify-between p-2 border-b border-gray-300 dark:border-gray-600 print:hidden">
 	<div class="self-start px-6">
-		<a href="/" aria-label="Link to home page">
-			<span class="sr-only">Matt Steele</span>
+		<a href="/" aria-label="Home">
 			<TerminalWindow
 				class="text-gray-800 hover:text-rose-700 dark:text-white dark:hover:text-gray-300"
 				width="36px"
@@ -30,22 +29,18 @@ const isCurrentPage = (href: string) => {
 	</div>
 
 	<div id="menu-content" class="w-3xs self-end flex">
-		<div class="grow-2 flex items-center space-between">
+		<div class="grow-2 flex items-center">
 			<ul class="w-full flex justify-between">
 				{
 					textLinks.map(({ label, href }) => (
-						<li class="max-h-[25px]">
+						<li>
 							<a
 								aria-current={isCurrentPage(href) ? "page" : null}
-								aria-label={`Navigate to ${label} page`}
-								class="hover:*:w-full hover:text-rose-700 dark:hover:text-gray-300 relative py-4 px-1"
+								class="group hover:text-rose-700 dark:hover:text-gray-300 relative py-4 px-1"
 								href={href}
 							>
 								{label}
-								{isCurrentPage(href) && (
-									<span class="bg-rose-700 absolute bottom-0 left-0 block w-full h-1 dark:bg-gray-300" />
-								)}
-								<span class="bg-rose-700 absolute bottom-0 left-0 block w-0 h-1 transparent transition-width duration-400 dark:bg-gray-300" />
+								<span class={`bg-rose-700 dark:bg-gray-300 absolute bottom-0 left-0 block h-1 transition-[width] duration-400 group-hover:w-full ${isCurrentPage(href) ? 'w-full' : 'w-0'}`} />
 							</a>
 						</li>
 					))
@@ -53,7 +48,7 @@ const isCurrentPage = (href: string) => {
 			</ul>
 		</div>
 
-		<div class="ml-8 px-6 self-end border-l border-gray-300">
+		<div class="ml-8 px-6 self-end border-l border-gray-300 dark:border-gray-600">
 			<ThemeToggle />
 		</div>
 	</div>

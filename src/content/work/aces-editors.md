@@ -1,5 +1,6 @@
 ---
 title: ACES | International Society of Editors
+description: A custom CMS-driven website for the international professional editing community, featuring conference details, scholarships, an editors-for-hire directory, and awards.
 publishDate: 2025-04-10 00:00:00
 img: "./images/aces-featured.jpg"
 img_alt: "A screenshot of the ACES Editors homepage highlighting resources such as the Editors for Hire Directory, scholarship opportunities, annual conference details, and editing bootcamps for professional editors."

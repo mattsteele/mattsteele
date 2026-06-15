@@ -1,5 +1,6 @@
 ---
 title: United Slings & Lifting, Inc. | eCommerce
+description: A Craft Commerce eCommerce platform for a family-run manufacturing business, supporting 250+ SKUs, custom orders, and detailed sales reporting.
 publishDate: 2025-03-10 00:00:00
 img: "./images/united-slings-featured.jpg"
 img_alt: "Featured image showcasing United Slings & Lifting's eCommerce platform with a clean and professional design, highlighting their manufacturing products."

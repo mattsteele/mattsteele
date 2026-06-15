@@ -10,8 +10,8 @@ const { data, id } = Astro.props.project;
 ---
 
 <a
-	class="flex flex-col group p-2 md:p-8 border-2 border-transparent hover:border-2 hover:border-rose-700 dark:hover:border-gray-300"
-	href={`/work/${id}`}
+	class="flex flex-col group p-2 md:p-8 border-2 border-transparent hover:border-rose-700 dark:hover:border-gray-300"
+	href={`/work/${id}/`}
 >
 	<h2
 		class="text-xl md:text-4xl my-4 md:my-9 text-center font-black dark:text-white"
@@ -21,6 +21,6 @@ const { data, id } = Astro.props.project;
 	<Image
 		class="group-hover:opacity-75"
 		src={data.img}
-		alt={data.img_alt || ""}
+		alt={data.img_alt}
 	/>
 </a>

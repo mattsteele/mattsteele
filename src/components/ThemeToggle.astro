@@ -5,8 +5,7 @@ import MoonStars from "../assets/svgs/moon-stars.svg";
 
 <theme-toggle>
 	<button
-		class="text-gray-800 hover:text-rose-700 dark:text-white dark:hover:text-gray-300 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 rounded"
-		@click="toggleTheme()"
+		class="text-gray-800 hover:text-rose-700 dark:text-white dark:hover:text-gray-300 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-rose-600 dark:focus:ring-gray-300 rounded"
 	>
 		<span class="sr-only">Toggle theme</span>
 		<span class="hidden dark:block">
@@ -23,7 +22,6 @@ import MoonStars from "../assets/svgs/moon-stars.svg";
 	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
-			if (typeof window === "undefined") return;
 			const button = this.querySelector("button");
 
 			const applyTheme = (theme: string) => {
@@ -31,15 +29,6 @@ import MoonStars from "../assets/svgs/moon-stars.svg";
 				document.documentElement.classList.add(theme);
 				document.documentElement.setAttribute("data-theme", theme);
 				localStorage.setItem("theme", theme);
-			};
-
-			const getPreferredTheme = () => {
-				if (localStorage.getItem("theme")) {
-					return localStorage.getItem("theme");
-				}
-				return window.matchMedia("(prefers-color-scheme: dark)").matches
-					? "dark"
-					: "light";
 			};
 
 			if (button) {
@@ -53,7 +42,6 @@ import MoonStars from "../assets/svgs/moon-stars.svg";
 				});
 			}
 
-			applyTheme(getPreferredTheme() ?? "light");
 		}
 	}
 

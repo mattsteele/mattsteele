@@ -6,8 +6,9 @@ interface Props {
   rel?: string;
 }
 
-const { href, class: className = "", target, rel, ...props } = Astro.props;
-const baseClasses = "hover:text-rose-700 dark:hover:text-gray-300 border-b-2 border-solid border-rose-700 dark:border-gray-300";
+const { href, class: className = "", target, rel: relProp, ...props } = Astro.props;
+const rel = relProp ?? (target === "_blank" ? "noopener noreferrer" : undefined);
+const baseClasses = "hover:text-rose-700 dark:hover:text-gray-300 border-b-2 border-solid border-rose-700 dark:border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-700 dark:focus:ring-gray-300 rounded-sm";
 ---
 
 <a 

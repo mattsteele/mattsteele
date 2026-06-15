@@ -2,31 +2,31 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
-	<main class="flex h-screen justify-center items-center mx-6">
+<BaseLayout title="Matt Steele | Software Engineer" description="The personal site of Matt Steele, a Senior Software Engineer specializing in Developer Experience, design systems, and scalable web applications.">
+	<main class="flex flex-1 justify-center items-center mx-6">
 		<div class="fade-in text-gray-800 font-mono dark:text-white">
 			<h1 class="text-8xl uppercase">
 				Matt Steele
 			</h1>
-			<h2 class="text-4xl">
+			<p class="text-4xl">
 				Software Engineer
-			</h2>
+			</p>
 		</div>
 	</main>
-</BaseLayout>
-<style>
-	.fade-in {
-		animation: fade-in 0.75s ease-in-out;
-	}
+	<style>
+		.fade-in {
+			animation: fade-in 0.75s ease-in-out;
+		}
 
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-			transform: translateY(20px);
+		@keyframes fade-in {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>
+	</style>
+</BaseLayout>

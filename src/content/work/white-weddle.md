@@ -1,5 +1,6 @@
 ---
 title: White & Weddle | Oklahoma City Trial Lawyers
+description: A professional Craft CMS website for a respected Oklahoma City law firm, designed to connect with clients and showcase their legal expertise.
 publishDate: 2025-01-10 00:00:00
 img: "./images/ww-featured.jpg"
 img_alt: "A featured image showcasing the White & Weddle website design, highlighting a clean and professional layout with vibrant visuals."

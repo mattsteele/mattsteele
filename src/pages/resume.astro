@@ -4,23 +4,20 @@ import EmailIcon from "../assets/svgs/email.svg";
 import LaptopIcon from "../assets/svgs/laptop.svg";
 import PrintIcon from "../assets/svgs/print.svg";
 ---
-<head>
-  <meta name="robots" content="noindex, nofollow" />
-</head>
-<BaseLayout title="Resume | Matt Steele" description="Matt Steele's Resume">
+<BaseLayout title="Resume | Matt Steele" description="Matt Steele's Resume" noindex={true}>
 	<div class="flex dark:text-white">
 		<!-- Sidebar -->
-		<aside class="hidden md:block bg-slate-500 w-1/5 p-6 print:hidden">
-			<div class="flex justify-self-end pt-4 pr-6">
+		<aside class="hidden md:block bg-gray-500 dark:bg-gray-700 w-1/5 p-6 print:hidden">
+			<div class="flex justify-end pt-4 pr-6">
 				<button
-					class="text-white hover:text-gray-300"
-					onclick="handlePrint()"
+					class="text-white hover:text-rose-200 dark:hover:text-gray-300 cursor-pointer"
+					onclick="window.print()"
+					aria-label="Print Resume"
 				>
 					<PrintIcon
 						width="28px"
 						height="28px"
-						fill="white"
-						aria-label="Print Resume"
+						aria-hidden="true"
 					/>
 				</button>
 			</div>
@@ -39,19 +36,17 @@ import PrintIcon from "../assets/svgs/print.svg";
 						</p>
 						<div class="flex items-center pt-4 print:pt-0 space-x-6">
 							<a
-								aria-label="Email"
 								href="mailto:mattsteele@outlook.com"
 								class="flex items-center hover:underline"
 							>
-								<EmailIcon width="20px" height="20px" fill="white" />
+								<EmailIcon width="20px" height="20px" aria-hidden="true" />
 								<span class="ml-2 print:ml-0">mattsteele@outlook.com</span>
 							</a>
 							<a
-								aria-label="Website"
 								href="https://mattsteele.dev"
 								class="flex items-center hover:underline"
 							>
-								<LaptopIcon width="20px" height="20px" fill="white" />
+								<LaptopIcon width="20px" height="20px" aria-hidden="true" />
 								<span class="ml-2 print:ml-0">mattsteele.dev</span>
 							</a>
 						</div>
@@ -60,9 +55,9 @@ import PrintIcon from "../assets/svgs/print.svg";
 			</header>
 
 			<main class="mx-6 md:mx-20">
-				<section class="mb-12 space-y-2 max-w-[1006px]">
+				<section class="mb-12 space-y-2 max-w-251.5">
 					<h2 class="text-3xl font-bold mb-6">Professional Summary</h2>
-					<hr class="border-gray-300 mb-4" />
+					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
 					<p class="text-lg leading-relaxed mb-4">
 						I am a Software Engineer specializing in design systems, developer tools,
 						and scalable web applications with Amazon Web Services (AWS). I optimize developer experience (DX) through
@@ -75,15 +70,15 @@ import PrintIcon from "../assets/svgs/print.svg";
 					</p>
 				</section>
 
-				<section class="mb-12 space-y-2 max-w-[1006px]">
+				<section class="mb-12 space-y-2 max-w-251.5">
 					<h2 class="text-3xl font-bold mb-6">Work Experience</h2>
-					<hr class="border-gray-300 mb-4" />
+					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
 
 					<article class="mb-10">
 						<div class="mb-4">
 							<p class="text-gray-500 tracking-wider mb-1 dark:text-white">
 								<time class="text-sm" datetime="2020-10-01">10/2020</time>
-								<span class="text-sm uppercase mx-1"> - </span>
+								<span class="text-sm uppercase mx-1" aria-hidden="true"> - </span>
 								<span class="text-sm uppercase">Present</span>
 							</p>
 							<h3 class="text-2xl font-semibold pb-1">
@@ -130,8 +125,8 @@ import PrintIcon from "../assets/svgs/print.svg";
 						<div class="mb-4">
 							<p class="text-gray-500 tracking-wider mb-1 dark:text-white">
 								<time class="text-sm" datetime="2017-10-01">10/2017</time>
-								<span class="text-sm uppercase mx-1"> - </span>
-								<span class="text-sm uppercase">10/2020</span>
+								<span class="text-sm uppercase mx-1" aria-hidden="true"> - </span>
+								<time class="text-sm" datetime="2020-10-01">10/2020</time>
 							</p>
 							<h3 class="text-2xl font-semibold pb-1">
 								Senior Software Engineer - Prototyping
@@ -172,7 +167,7 @@ import PrintIcon from "../assets/svgs/print.svg";
 						<div class="mb-4">
 							<p class="text-gray-500 tracking-wider mb-1 dark:text-white">
 								<time class="text-sm" datetime="2016-05-01">05/2016</time>
-								<span class="text-sm mx-1"> - </span>
+								<span class="text-sm mx-1" aria-hidden="true"> - </span>
 								<time class="text-sm" datetime="2017-10-01">10/2017</time>
 							</p>
 							<h3 class="text-2xl font-semibold pb-1">Senior Web Developer</h3>
@@ -210,9 +205,9 @@ import PrintIcon from "../assets/svgs/print.svg";
 					</article>
 				</section>
 
-				<section class="mb-10 space-y-2 max-w-[1006px]">
+				<section class="mb-10 space-y-2 max-w-251.5">
 					<h2 class="text-3xl font-bold mb-6">Education</h2>
-					<hr class="border-gray-300 mb-4" />
+					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
 					<article>
 						<div>
 							<h3 class="text-2xl font-semibold pb-1">Bachelor of Fine Arts</h3>
@@ -231,9 +226,9 @@ import PrintIcon from "../assets/svgs/print.svg";
 					</article>
 				</section>
 
-				<section class="mb-10 space-y-2 max-w-[1006px]">
+				<section class="mb-10 space-y-2 max-w-251.5">
 					<h2 class="text-3xl font-bold mb-6">Skills</h2>
-					<hr class="border-gray-300 mb-4" />
+					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
 					<ul class="list-disc ml-6 text-lg leading-relaxed space-y-2">
 						<li>Design Systems</li>
 						<li>Developer Experience (DX)</li>
@@ -250,14 +245,10 @@ import PrintIcon from "../assets/svgs/print.svg";
 					</ul>
 				</section>
 			</main>
-			<footer class="bg-gray-800 p-10">
+			<footer class="bg-gray-600 dark:bg-gray-800 p-10">
 				<p class="text-white">
 					Last updated: {
-						new Date(
-							import.meta.env.SITE_BUILD_TIME ||
-								import.meta.env.BUILD_TIME ||
-								Date.now()
-						).toLocaleDateString(undefined, {
+						new Date().toLocaleDateString(undefined, {
 							month: "numeric",
 							year: "numeric",
 						})
@@ -267,9 +258,3 @@ import PrintIcon from "../assets/svgs/print.svg";
 		</div>
 	</div>
 </BaseLayout>
-
-<script is:inline>
-	function handlePrint() {
-		window.print();
-	}
-</script>

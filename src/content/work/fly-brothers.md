@@ -1,5 +1,6 @@
 ---
 title: Fly Brothers | Helicopter Flight School
+description: A custom CMS website for a helicopter flight school, showcasing accelerated pilot training programs and professional flight services.
 publishDate: 2024-12-10 00:00:00
 img: "./images/flybros-featured.jpg"
 img_alt: "Featured image for Fly Brothers Helicopter Flight School, showing a helicopter in flight against a bright blue sky, symbolizing the thrill and professionalism of aviation training."

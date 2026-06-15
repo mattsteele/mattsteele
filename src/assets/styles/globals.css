@@ -7,9 +7,17 @@
 	background-position: 99% 0;
 	background-size: 205% 100%;
 	transition: all 0.25s ease-in-out;
-	
+
 	&:hover {
 		background-position: 0 0;
+	}
+
+	:where(.dark, .dark *) & {
+		background-image: linear-gradient(to left, transparent, transparent 50%, theme(colors.gray.300) 50%, theme(colors.gray.300));
+	}
+
+	:where(.dark, .dark *) &:hover {
+		color: theme(colors.gray.800);
 	}
 }
 

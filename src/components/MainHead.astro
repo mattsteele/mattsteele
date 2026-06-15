@@ -4,48 +4,72 @@ import "../assets/styles/globals.css";
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	noindex?: boolean | undefined;
 }
 
 const {
 	title = "Matt Steele | Software Engineer",
 	description = "The personal site of Matt Steele",
+	noindex = false,
 } = Astro.props;
+
+const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={Astro.url.href} />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
+
 <!-- Google tag (gtag.js) -->
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-9DH4GV617J"></script>
-<script is:inline>
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+<script is:inline define:vars={{ gaId }}>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-9DH4GV617J');
+  gtag('config', gaId, { send_page_view: false });
 </script>
 
-<meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
-<meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />
-<title>{title}</title>
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content="https://www.mattsteele.dev/android-chrome-512x512.png" />
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content="https://www.mattsteele.dev/android-chrome-512x512.png" />
+
+<!-- JSON-LD -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matt Steele",
+  "url": "https://www.mattsteele.dev",
+  "jobTitle": "Senior Software Engineer",
+  "description": "Senior Software Engineer specializing in Developer Experience, design systems, and scalable web applications.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Denver",
+    "addressRegion": "CO",
+    "addressCountry": "US"
+  }
+})} />
 
 <!-- Favicons -->
-<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#f43f5e">
-
-{typeof window !== "undefined" && (
-	<script is:inline>
-		const theme = localStorage.getItem("theme");
-		if (
-			theme === "dark" ||
-			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
-	</script>
-)}

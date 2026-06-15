@@ -1,5 +1,6 @@
 ---
 title: OREA | Oklahoma Retired Educators Association
+description: A modern website for the Oklahoma Retired Educators Association, keeping members informed with news, district resources, and advocacy updates.
 publishDate: 2025-02-10 00:00:00
 img: "./images/orea-featured.jpg"
 img_alt: "Screenshot of the OREA website homepage, showcasing a modern design with navigation menus, featured news, and quick access to member resources."
