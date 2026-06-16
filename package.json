@@ -10,10 +10,7 @@
     "astro": "astro",
     "check": "astro check"
   },
-  "overrides": {
-    "vite": "^7"
-  },
-  "devDependencies": {
+"devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.1",
