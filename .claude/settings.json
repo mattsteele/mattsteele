@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm outdated *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(f'{k}: {v[\\\\\"current\\\\\"]} → {v[\\\\\"latest\\\\\"]}'\\) for k,v in d.items\\(\\)]\")",
+      "Bash(npm update *)"
+    ]
+  }
+}
