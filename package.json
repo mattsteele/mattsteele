@@ -10,17 +10,17 @@
     "astro": "astro",
     "check": "astro check"
   },
-"devDependencies": {
+  "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
-    "@tailwindcss/vite": "^4.3.1",
-    "astro": "^6.4.7",
-    "tailwindcss": "^4.3.1",
+    "@tailwindcss/vite": "^4.3.2",
+    "astro": "^7.0.3",
+    "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3"
   },
   "allowScripts": {
-    "esbuild@0.27.7": true,
     "fsevents@2.3.3": true,
-    "sharp@0.34.5": true
+    "sharp@0.34.5": true,
+    "esbuild@0.28.1": true
   }
 }
