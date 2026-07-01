@@ -8,7 +8,7 @@ export default defineConfig([
 	eslintPluginAstro.configs.recommended,
 	eslintConfigPrettier,
 	{
-		ignores: ["dist/**", ".astro/**"],
+		ignores: ["dist/**", ".astro/**", ".wrangler/**"],
 	},
 	{
 		files: ["**/env.d.ts"],
