@@ -68,7 +68,7 @@ public/
 - `public/_headers` — security headers and cache rules applied to all routes
 - HTML served with `Cache-Control: public, max-age=0, must-revalidate` so deployments propagate immediately
 - Versioned/static assets (`/_astro/*`, fonts, images, css, js) served with `Cache-Control: public, max-age=31536000, immutable`; favicons/manifest with a shorter 1-day cache
-- Google Analytics (`googletagmanager.com`, `google-analytics.com`) and Cloudflare Web Analytics (`static.cloudflareinsights.com`) are allowed in the CSP
+- Google Analytics and Cloudflare Web Analytics are allowed in the CSP: `googletagmanager.com` (script + tracking pixel), `google-analytics.com`, and `www.google.com` (GA4's actual beacon endpoint is `www.google.com/g/collect`, not `google-analytics.com` — don't remove it, connect-src was silently blocking all GA traffic before this was added), and `static.cloudflareinsights.com` for CF Web Analytics
 
 ## Content Security Policy
 
