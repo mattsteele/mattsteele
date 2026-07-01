@@ -10,8 +10,8 @@ import PrintIcon from "@/assets/svgs/print.svg";
 		<aside class="hidden md:block bg-gray-500 dark:bg-gray-700 w-1/5 p-6 print:hidden">
 			<div class="flex justify-end pt-4 pr-6">
 				<button
+					id="print-resume"
 					class="text-white hover:text-rose-200 dark:hover:text-gray-300 cursor-pointer"
-					onclick="window.print()"
 					aria-label="Print Resume"
 				>
 					<PrintIcon
@@ -21,6 +21,9 @@ import PrintIcon from "@/assets/svgs/print.svg";
 					/>
 				</button>
 			</div>
+			<script is:inline>
+				document.getElementById("print-resume")?.addEventListener("click", () => window.print());
+			</script>
 		</aside>
 
 		<!-- Main Content -->
