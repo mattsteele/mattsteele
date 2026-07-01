@@ -17,39 +17,47 @@ const isCurrentPage = (href: string) => {
 };
 ---
 
-<nav class="flex justify-between p-2 border-b border-gray-300 dark:border-gray-600 print:hidden">
-	<div class="self-start px-6">
-		<a href="/" aria-label="Home">
-			<TerminalWindow
-				class="text-gray-800 hover:text-rose-700 dark:text-white dark:hover:text-gray-300"
-				width="36px"
-				height="36px"
-			/>
-		</a>
-	</div>
-
-	<div id="menu-content" class="w-3xs self-end flex">
-		<div class="grow-2 flex items-center">
-			<ul class="w-full flex justify-between">
-				{
-					textLinks.map(({ label, href }) => (
-						<li>
-							<a
-								aria-current={isCurrentPage(href) ? "page" : null}
-								class="group hover:text-rose-700 dark:hover:text-gray-300 relative py-4 px-1"
-								href={href}
-							>
-								{label}
-								<span class={`bg-rose-700 dark:bg-gray-300 absolute bottom-0 left-0 block h-1 transition-[width] duration-400 group-hover:w-full ${isCurrentPage(href) ? 'w-full' : 'w-0'}`} />
-							</a>
-						</li>
-					))
-				}
-			</ul>
+<header>
+	<nav
+		class="flex justify-between border-b border-gray-300 p-2 dark:border-gray-600 print:hidden"
+	>
+		<div class="self-start px-6">
+			<a href="/" aria-label="Home">
+				<TerminalWindow
+					class="text-gray-800 hover:text-rose-700 dark:text-white dark:hover:text-gray-300"
+					width="36px"
+					height="36px"
+				/>
+			</a>
 		</div>
 
-		<div class="ml-8 px-6 self-end border-l border-gray-300 dark:border-gray-600">
-			<ThemeToggle />
+		<div id="menu-content" class="flex w-3xs self-end">
+			<div class="flex grow-2 items-center">
+				<ul class="flex w-full justify-between">
+					{
+						textLinks.map(({ label, href }) => (
+							<li>
+								<a
+									aria-current={isCurrentPage(href) ? "page" : null}
+									class="group relative px-1 py-4 hover:text-rose-700 dark:hover:text-gray-300"
+									href={href}
+								>
+									{label}
+									<span
+										class={`absolute bottom-0 left-0 block h-1 bg-rose-700 transition-[width] duration-400 group-hover:w-full dark:bg-gray-300 ${isCurrentPage(href) ? "w-full" : "w-0"}`}
+									/>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div
+				class="ml-8 self-end border-l border-gray-300 px-6 dark:border-gray-600"
+			>
+				<ThemeToggle />
+			</div>
 		</div>
-	</div>
-</nav>
+	</nav>
+</header>

@@ -2,36 +2,76 @@
 import ExternalLinkIcon from "@/assets/svgs/external-link.svg";
 
 const links = [
-	{ label: "Home", href: "/", bg: "bg-rose-400 dark:bg-gray-400", underline: "bg-gray-300 dark:bg-gray-600" },
-	{ label: "About", href: "/about/", bg: "bg-rose-500 dark:bg-gray-500", underline: "bg-gray-300 dark:bg-gray-700" },
-	{ label: "Work", href: "/work/", bg: "bg-neutral-500 dark:bg-gray-600", underline: "bg-gray-100 dark:bg-gray-800" },
-	{ label: "GitHub", href: "https://github.com/mattsteele", bg: "bg-neutral-600 dark:bg-gray-700", underline: "bg-gray-300 dark:bg-gray-900", external: true, iconSize: "22px" },
-	{ label: "LinkedIn", href: "https://www.linkedin.com/in/mattwsteele", bg: "bg-slate-400 dark:bg-gray-800", underline: "bg-gray-300 dark:bg-gray-900", external: true, iconSize: "22px" },
-	{ label: "Western Code", href: "https://westerncode.com", bg: "bg-slate-500 dark:bg-gray-900", underline: "bg-gray-300 dark:bg-gray-950", external: true, iconSize: "16px" },
+	{
+		label: "Home",
+		href: "/",
+		bg: "bg-rose-400 dark:bg-gray-400",
+		underline: "bg-gray-300 dark:bg-gray-600",
+	},
+	{
+		label: "About",
+		href: "/about/",
+		bg: "bg-rose-500 dark:bg-gray-500",
+		underline: "bg-gray-300 dark:bg-gray-700",
+	},
+	{
+		label: "Work",
+		href: "/work/",
+		bg: "bg-neutral-500 dark:bg-gray-600",
+		underline: "bg-gray-100 dark:bg-gray-800",
+	},
+	{
+		label: "GitHub",
+		href: "https://github.com/mattsteele",
+		bg: "bg-neutral-600 dark:bg-gray-700",
+		underline: "bg-gray-300 dark:bg-gray-900",
+		external: true,
+		iconSize: "22px",
+	},
+	{
+		label: "LinkedIn",
+		href: "https://www.linkedin.com/in/mattwsteele",
+		bg: "bg-slate-400 dark:bg-gray-800",
+		underline: "bg-gray-300 dark:bg-gray-900",
+		external: true,
+		iconSize: "22px",
+	},
+	{
+		label: "Western Code",
+		href: "https://westerncode.com",
+		bg: "bg-slate-500 dark:bg-gray-900",
+		underline: "bg-gray-300 dark:bg-gray-950",
+		external: true,
+		iconSize: "16px",
+	},
 ];
 ---
 
-<footer class="flex flex-col w-full print:hidden">
-	{links.map(({ label, href, bg, underline, external, iconSize }) => (
-		<div class={`${bg} relative`}>
-			<a
-				class="group flex w-full justify-center text-white py-2 uppercase items-center no-underline"
-				href={href}
-				target={external ? "_blank" : undefined}
-				rel={external ? "noopener noreferrer" : undefined}
-			>
-				{label}
-				{external && (
-					<ExternalLinkIcon
-						class="pb-1 max-w-3"
-						width={iconSize}
-						height={iconSize}
-						fill="white"
-						aria-hidden="true"
+<footer class="flex w-full flex-col print:hidden">
+	{
+		links.map(({ label, href, bg, underline, external, iconSize }) => (
+			<div class={`${bg} relative`}>
+				<a
+					class="group flex w-full items-center justify-center py-2 text-white uppercase no-underline"
+					href={href}
+					target={external ? "_blank" : undefined}
+					rel={external ? "noopener noreferrer" : undefined}
+				>
+					{label}
+					{external && (
+						<ExternalLinkIcon
+							class="max-w-3 pb-1"
+							width={iconSize}
+							height={iconSize}
+							fill="white"
+							aria-hidden="true"
+						/>
+					)}
+					<span
+						class={`${underline} absolute bottom-0 left-0 block h-1 w-0 transition-[width] duration-400 group-hover:w-full`}
 					/>
-				)}
-				<span class={`${underline} absolute bottom-0 left-0 block w-0 h-1 transition-[width] duration-400 group-hover:w-full`}></span>
-			</a>
-		</div>
-	))}
+				</a>
+			</div>
+		))
+	}
 </footer>

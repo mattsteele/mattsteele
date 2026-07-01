@@ -22,11 +22,15 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description} noindex={true}>
-	<main class="flex-1 md:my-24 my-12 mx-6">
+<BaseLayout
+	title={entry.data.title}
+	description={entry.data.description}
+	noindex={true}
+>
+	<main class="mx-6 my-12 flex-1 md:my-24">
 		<div class="flex flex-col items-center">
 			<h1
-				class="text-xl md:text-4xl my-4 md:my-9 text-center font-black dark:text-white"
+				class="my-4 text-center text-xl font-black md:my-9 md:text-4xl dark:text-white"
 			>
 				{entry.data.title}
 			</h1>
@@ -37,20 +41,20 @@ const { Content } = await render(entry);
 			/>
 
 			<div
-				class="[&_h3]:text-2xl [&_ul]:list-disc [&_ul]:list-inside max-w-251.5"
+				class="max-w-251.5 [&_h3]:text-2xl [&_ul]:list-inside [&_ul]:list-disc"
 			>
-				<div class="*:text-xl *:py-2">
+				<div class="*:py-2 *:text-xl">
 					<Content />
 				</div>
 
-				<h2 class="font-medium text-xl mt-5">Project Involvement:</h2>
-				<div class="flex flex-wrap gap-4 my-5">
+				<h2 class="mt-5 text-xl font-medium">Project Involvement:</h2>
+				<div class="my-5 flex flex-wrap gap-4">
 					{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 				</div>
 				{
 					entry.data.external_site_link && (
 						<a
-							class="btn-gradient flex justify-center bg-gray-600 dark:bg-gray-500 uppercase max-w-40 rounded-lg text-white text-xl my-8 py-4 px-6"
+							class="btn-gradient my-8 flex max-w-40 justify-center rounded-lg bg-gray-600 px-6 py-4 text-xl text-white uppercase dark:bg-gray-500"
 							rel="noopener noreferrer"
 							href={entry.data.external_site_link}
 							target="_blank"
@@ -60,7 +64,7 @@ const { Content } = await render(entry);
 							<ExternalLinkIcon
 								width="14px"
 								height="14px"
-								class="fill-current mt-0.75"
+								class="mt-0.75 fill-current"
 							/>
 						</a>
 					)

@@ -5,14 +5,15 @@ import MoonStars from "@/assets/svgs/moon-stars.svg";
 
 <theme-toggle>
 	<button
-		class="text-gray-800 hover:text-rose-700 dark:text-white dark:hover:text-gray-300 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-rose-600 dark:focus:ring-gray-300 rounded"
+		type="button"
+		class="rounded text-gray-800 hover:cursor-pointer hover:text-rose-700 focus:ring-2 focus:ring-rose-600 focus:outline-none dark:text-white dark:hover:text-gray-300 dark:focus:ring-gray-300"
+		aria-label="Toggle between light and dark mode"
 	>
-		<span class="sr-only">Toggle theme</span>
-		<span class="hidden dark:block">
+		<span class="hidden dark:block" aria-hidden="true">
 			<Sun width="28px" height="28px" />
 		</span>
 
-		<span class="dark:hidden">
+		<span class="dark:hidden" aria-hidden="true">
 			<MoonStars width="28px" height="28px" />
 		</span>
 	</button>
@@ -34,14 +35,13 @@ import MoonStars from "@/assets/svgs/moon-stars.svg";
 			if (button) {
 				button.addEventListener("click", () => {
 					const currentTheme = document.documentElement.classList.contains(
-						"dark"
+						"dark",
 					)
 						? "dark"
 						: "light";
 					applyTheme(currentTheme === "dark" ? "light" : "dark");
 				});
 			}
-
 		}
 	}
 

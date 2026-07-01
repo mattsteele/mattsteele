@@ -4,40 +4,45 @@ import EmailIcon from "@/assets/svgs/email.svg";
 import LaptopIcon from "@/assets/svgs/laptop.svg";
 import PrintIcon from "@/assets/svgs/print.svg";
 ---
-<BaseLayout title="Resume | Matt Steele" description="Matt Steele's Resume" noindex={true}>
+
+<BaseLayout
+	title="Resume | Matt Steele"
+	description="Matt Steele's Resume"
+	noindex={true}
+>
 	<div class="flex dark:text-white">
 		<!-- Sidebar -->
-		<aside class="hidden md:block bg-gray-500 dark:bg-gray-700 w-1/5 p-6 print:hidden">
+		<aside
+			class="hidden w-1/5 bg-gray-500 p-6 md:block dark:bg-gray-700 print:hidden"
+		>
 			<div class="flex justify-end pt-4 pr-6">
 				<button
 					id="print-resume"
-					class="text-white hover:text-rose-200 dark:hover:text-gray-300 cursor-pointer"
+					class="cursor-pointer text-white hover:text-rose-200 dark:hover:text-gray-300"
 					aria-label="Print Resume"
 				>
-					<PrintIcon
-						width="28px"
-						height="28px"
-						aria-hidden="true"
-					/>
+					<PrintIcon width="28px" height="28px" aria-hidden="true" />
 				</button>
 			</div>
 			<script is:inline>
-				document.getElementById("print-resume")?.addEventListener("click", () => window.print());
+				document
+					.getElementById("print-resume")
+					?.addEventListener("click", () => window.print());
 			</script>
 		</aside>
 
 		<!-- Main Content -->
-		<div class="mt-6 md:mt-12 flex-1">
+		<div class="mt-6 flex-1 md:mt-12">
 			<header class="mx-6 md:mx-20">
-				<div class="flex items-center mb-6">
+				<div class="mb-6 flex items-center">
 					<div>
 						<h1 class="text-5xl font-bold print:text-black">Matt Steele</h1>
-						<p class="text-xl mt-2">
+						<p class="mt-2 text-xl">
 							<span>Senior Software Engineer</span>
 							<span class="mx-2" aria-hidden="true"> | </span>
 							<span>Denver, CO</span>
 						</p>
-						<div class="flex items-center pt-4 print:pt-0 space-x-6">
+						<div class="flex items-center space-x-6 pt-4 print:pt-0">
 							<a
 								href="mailto:mattsteele@outlook.com"
 								class="flex items-center hover:underline"
@@ -58,34 +63,37 @@ import PrintIcon from "@/assets/svgs/print.svg";
 			</header>
 
 			<main class="mx-6 md:mx-20">
-				<section class="mb-12 space-y-2 max-w-251.5">
-					<h2 class="text-3xl font-bold mb-6">Professional Summary</h2>
-					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
-					<p class="text-lg leading-relaxed mb-4">
-						I am a Software Engineer specializing in design systems, developer tools,
-						and scalable web applications with Amazon Web Services (AWS). I optimize developer experience (DX) through
-						modern frameworks, automation, and AI-powered tooling.
+				<section class="mb-12 max-w-251.5 space-y-2">
+					<h2 class="mb-6 text-3xl font-bold">Professional Summary</h2>
+					<hr class="mb-4 border-gray-300 dark:border-gray-600" />
+					<p class="mb-4 text-lg leading-relaxed">
+						I am a Software Engineer specializing in design systems, developer
+						tools, and scalable web applications with Amazon Web Services (AWS).
+						I optimize developer experience (DX) through modern frameworks,
+						automation, and AI-powered tooling.
 					</p>
 					<p class="text-lg leading-relaxed">
-						I deliver accessible, high-performance JavaScript solutions using Angular, React,
-						and Vue with expertise in documentation, collaboration, and
-						best practices for modern web development, including integrating LLMs to
-						accelerate engineering workflows.
+						I deliver accessible, high-performance JavaScript solutions using
+						Angular, React, and Vue with expertise in documentation,
+						collaboration, and best practices for modern web development,
+						including integrating LLMs to accelerate engineering workflows.
 					</p>
 				</section>
 
-				<section class="mb-12 space-y-2 max-w-251.5">
-					<h2 class="text-3xl font-bold mb-6">Work Experience</h2>
-					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
+				<section class="mb-12 max-w-251.5 space-y-2">
+					<h2 class="mb-6 text-3xl font-bold">Work Experience</h2>
+					<hr class="mb-4 border-gray-300 dark:border-gray-600" />
 
 					<article class="mb-10">
 						<div class="mb-4">
-							<p class="text-gray-500 tracking-wider mb-1 dark:text-white">
+							<p class="mb-1 tracking-wider text-gray-500 dark:text-white">
 								<time class="text-sm" datetime="2020-10-01">10/2020</time>
-								<span class="text-sm uppercase mx-1" aria-hidden="true"> - </span>
+								<span class="mx-1 text-sm uppercase" aria-hidden="true">
+									-
+								</span>
 								<span class="text-sm uppercase">Present</span>
 							</p>
-							<h3 class="text-2xl font-semibold pb-1">
+							<h3 class="pb-1 text-2xl font-semibold">
 								Senior Software Engineer - Design Systems
 							</h3>
 							<p class="text-sm dark:text-white">
@@ -100,7 +108,7 @@ import PrintIcon from "@/assets/svgs/print.svg";
 								<span>Denver, CO</span>
 							</p>
 						</div>
-						<ul class="list-disc ml-6 text-lg leading-relaxed space-y-2">
+						<ul class="ml-6 list-disc space-y-2 text-lg leading-relaxed">
 							<li>
 								Manage and scale a company-wide design system to ensure
 								consistent, accessible user interfaces across multiple products.
@@ -127,12 +135,14 @@ import PrintIcon from "@/assets/svgs/print.svg";
 
 					<article class="mb-10">
 						<div class="mb-4">
-							<p class="text-gray-500 tracking-wider mb-1 dark:text-white">
+							<p class="mb-1 tracking-wider text-gray-500 dark:text-white">
 								<time class="text-sm" datetime="2017-10-01">10/2017</time>
-								<span class="text-sm uppercase mx-1" aria-hidden="true"> - </span>
+								<span class="mx-1 text-sm uppercase" aria-hidden="true">
+									-
+								</span>
 								<time class="text-sm" datetime="2020-10-01">10/2020</time>
 							</p>
-							<h3 class="text-2xl font-semibold pb-1">
+							<h3 class="pb-1 text-2xl font-semibold">
 								Senior Software Engineer - Prototyping
 							</h3>
 							<p class="text-sm dark:text-white">
@@ -147,7 +157,7 @@ import PrintIcon from "@/assets/svgs/print.svg";
 								<span>Denver, CO</span>
 							</p>
 						</div>
-						<ul class="list-disc ml-6 text-lg leading-relaxed space-y-2">
+						<ul class="ml-6 list-disc space-y-2 text-lg leading-relaxed">
 							<li>
 								Designed and implemented prototypes and proof-of-concept (POC)
 								projects using Vue and Angular to validate new product ideas.
@@ -169,12 +179,12 @@ import PrintIcon from "@/assets/svgs/print.svg";
 
 					<article class="mb-10">
 						<div class="mb-4">
-							<p class="text-gray-500 tracking-wider mb-1 dark:text-white">
+							<p class="mb-1 tracking-wider text-gray-500 dark:text-white">
 								<time class="text-sm" datetime="2016-05-01">05/2016</time>
-								<span class="text-sm mx-1" aria-hidden="true"> - </span>
+								<span class="mx-1 text-sm" aria-hidden="true"> - </span>
 								<time class="text-sm" datetime="2017-10-01">10/2017</time>
 							</p>
-							<h3 class="text-2xl font-semibold pb-1">Senior Web Developer</h3>
+							<h3 class="pb-1 text-2xl font-semibold">Senior Web Developer</h3>
 							<p class="text-sm dark:text-white">
 								<a
 									href="https://clover.partners/"
@@ -187,7 +197,7 @@ import PrintIcon from "@/assets/svgs/print.svg";
 								<span>Denver, CO</span>
 							</p>
 						</div>
-						<ul class="list-disc ml-6 text-lg leading-relaxed space-y-2">
+						<ul class="ml-6 list-disc space-y-2 text-lg leading-relaxed">
 							<li>
 								Developed custom client-facing web applications using JavaScript
 								and PHP, integrated with Craft and Statamic CMS platforms.
@@ -209,12 +219,12 @@ import PrintIcon from "@/assets/svgs/print.svg";
 					</article>
 				</section>
 
-				<section class="mb-10 space-y-2 max-w-251.5">
-					<h2 class="text-3xl font-bold mb-6">Education</h2>
-					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
+				<section class="mb-10 max-w-251.5 space-y-2">
+					<h2 class="mb-6 text-3xl font-bold">Education</h2>
+					<hr class="mb-4 border-gray-300 dark:border-gray-600" />
 					<article>
 						<div>
-							<h3 class="text-2xl font-semibold pb-1">Bachelor of Fine Arts</h3>
+							<h3 class="pb-1 text-2xl font-semibold">Bachelor of Fine Arts</h3>
 							<p class="text-sm dark:text-white">
 								<a
 									href="https://www.academyart.edu/"
@@ -230,10 +240,10 @@ import PrintIcon from "@/assets/svgs/print.svg";
 					</article>
 				</section>
 
-				<section class="mb-10 space-y-2 max-w-251.5">
-					<h2 class="text-3xl font-bold mb-6">Skills</h2>
-					<hr class="border-gray-300 dark:border-gray-600 mb-4" />
-					<ul class="list-disc ml-6 text-lg leading-relaxed space-y-2">
+				<section class="mb-10 max-w-251.5 space-y-2">
+					<h2 class="mb-6 text-3xl font-bold">Skills</h2>
+					<hr class="mb-4 border-gray-300 dark:border-gray-600" />
+					<ul class="ml-6 list-disc space-y-2 text-lg leading-relaxed">
 						<li>Design Systems</li>
 						<li>Developer Experience (DX)</li>
 						<li>Amazon Web Services (AWS)</li>
@@ -249,7 +259,7 @@ import PrintIcon from "@/assets/svgs/print.svg";
 					</ul>
 				</section>
 			</main>
-			<footer class="bg-gray-600 dark:bg-gray-800 p-10">
+			<footer class="bg-gray-600 p-10 dark:bg-gray-800">
 				<p class="text-white">
 					Last updated: {
 						new Date().toLocaleDateString(undefined, {

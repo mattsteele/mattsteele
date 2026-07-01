@@ -1,0 +1,25 @@
+---
+const siteUrl = Astro.site?.toString().replace(/\/$/, "");
+
+const personData = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Matt Steele",
+	url: siteUrl,
+	jobTitle: "Senior Software Engineer",
+	description:
+		"Senior Software Engineer specializing in Developer Experience, design systems, and scalable web applications.",
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Denver",
+		addressRegion: "CO",
+		addressCountry: "US",
+	},
+};
+---
+
+<script
+	is:inline
+	type="application/ld+json"
+	set:html={JSON.stringify(personData)}
+/>

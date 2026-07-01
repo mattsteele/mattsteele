@@ -1,5 +1,6 @@
 ---
 import "@/assets/styles/globals.css";
+import StructuredData from "@/components/StructuredData.astro";
 
 interface Props {
 	title?: string | undefined;
@@ -14,6 +15,8 @@ const {
 } = Astro.props;
 
 const gaId = import.meta.env.PUBLIC_GA_ID;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/android-chrome-512x512.png", Astro.site);
 ---
 
 <meta charset="UTF-8" />
@@ -21,7 +24,7 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 <title>{title}</title>
 <meta name="description" content={description} />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
-<link rel="canonical" href={Astro.url.href} />
+<link rel="canonical" href={canonicalURL} />
 <meta name="generator" content={Astro.generator} />
 
 <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -29,48 +32,43 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 
 <!-- Google tag (gtag.js) -->
 <meta name="ga-measurement-id" content={gaId} />
-<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+<script
+	is:inline
+	async
+	src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
 <script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
+	function gtag(...args) {
+		dataLayer.push(args);
+	}
+	gtag("js", new Date());
 
-  gtag('config', document.querySelector('meta[name="ga-measurement-id"]').content, { send_page_view: false });
+	gtag(
+		"config",
+		document.querySelector('meta[name="ga-measurement-id"]').content,
+		{ send_page_view: false },
+	);
 </script>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="https://mattsteele.dev/android-chrome-512x512.png" />
+<meta property="og:image" content={ogImage} />
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content="https://mattsteele.dev/android-chrome-512x512.png" />
+<meta name="twitter:image" content={ogImage} />
 
-<!-- JSON-LD -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Matt Steele",
-  "url": "https://mattsteele.dev",
-  "jobTitle": "Senior Software Engineer",
-  "description": "Senior Software Engineer specializing in Developer Experience, design systems, and scalable web applications.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Denver",
-    "addressRegion": "CO",
-    "addressCountry": "US"
-  }
-})} />
+<StructuredData />
 
 <!-- Favicons -->
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#f43f5e">
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#f43f5e" />

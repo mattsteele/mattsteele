@@ -6,18 +6,21 @@ import mattSteeleIllustrated from "@/assets/images/mattsteele-illustrated.png";
 import mattSteeleSignature from "@/assets/images/mattsteele-signature.png";
 ---
 
-<BaseLayout title="About | Matt Steele" description="Matt Steele is a Senior Software Engineer in Denver, Colorado specializing in Developer Experience, design systems, and scalable web applications.">
-	<main class="flex flex-1 flex-col md:my-24 my-20">
+<BaseLayout
+	title="About | Matt Steele"
+	description="Matt Steele is a Senior Software Engineer in Denver, Colorado specializing in Developer Experience, design systems, and scalable web applications."
+>
+	<main class="my-20 flex flex-1 flex-col md:my-24">
 		<div class="mx-6 flex flex-col items-center">
 			<div
-				class="relative w-full md:w-96 h-96 bg-gray-900 dark:bg-gray-700 p-6"
+				class="relative h-96 w-full bg-gray-900 p-6 md:w-96 dark:bg-gray-700"
 			>
-				<h1 class="text-white text-2xl uppercase mb-1 tracking-wide">
+				<h1 class="mb-1 text-2xl tracking-wide text-white uppercase">
 					Matt Steele
 				</h1>
-				<p class="text-white text-base">Software Engineer</p>
+				<p class="text-base text-white">Software Engineer</p>
 				<Image
-					class="absolute bottom-0 right-0"
+					class="absolute right-0 bottom-0"
 					src={mattSteeleIllustrated}
 					alt="Illustration of Matt Steele"
 					width="326"
@@ -25,7 +28,7 @@ import mattSteeleSignature from "@/assets/images/mattsteele-signature.png";
 				/>
 			</div>
 
-			<div class="mt-12 text-xl space-y-4 dark:text-white max-w-251.5">
+			<div class="mt-12 max-w-251.5 space-y-4 text-xl dark:text-white">
 				<p>
 					I specialize in improving Developer Experience (DX) by building and
 					optimizing tools, frameworks, and processes for productivity and
@@ -36,13 +39,15 @@ import mattSteeleSignature from "@/assets/images/mattsteele-signature.png";
 				<p>
 					My work includes design systems, modular components, rapid
 					prototyping, and implementing scalable proof-of-concept projects,
-					often integrating AI-powered tooling to improve developer productivity.
+					often integrating AI-powered tooling to improve developer
+					productivity.
 				</p>
 
 				<p>I work as a Senior Software Engineer in Denver, Colorado.</p>
 
 				<p>
-					You can <Link href="/resume/">view my resume</Link>.</p>
+					You can <Link href="/resume/">view my resume</Link>.
+				</p>
 
 				<div class="mt-10">
 					<Image
@@ -52,7 +57,7 @@ import mattSteeleSignature from "@/assets/images/mattsteele-signature.png";
 						width="100"
 						height="33"
 					/>
-					<p class="text-lg uppercase mt-1 tracking-wide">Matt Steele</p>
+					<p class="mt-1 text-lg tracking-wide uppercase">Matt Steele</p>
 				</div>
 			</div>
 		</div>
