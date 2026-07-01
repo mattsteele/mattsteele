@@ -39,7 +39,7 @@ const { title, description, noindex } = Astro.props;
 			<Footer />
 		</div>
 
-		<script is:inline define:vars={{ gaId: import.meta.env.PUBLIC_GA_ID }}>
+		<script is:inline>
 			document.addEventListener("astro:page-load", () => {
 				if (typeof gtag !== "undefined") {
 					gtag("event", "page_view", {

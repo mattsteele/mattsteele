@@ -50,6 +50,9 @@ public/
 - `trailingSlash: 'always'` — keep internal links consistent with trailing slashes
 - `compressHTML: true` — minifies HTML output
 - `prefetch: true` — prefetches linked pages
+- `build.inlineStylesheets: 'auto'` — inlines small stylesheets
+- `vite.build.cssMinify: 'lightningcss'` — minifies CSS with LightningCSS
+- `site: 'https://mattsteele.dev'` — canonical domain is the apex; `public/_redirects` 301s `www.mattsteele.dev` → apex
 - Sitemap auto-generated via `@astrojs/sitemap`, but `/work` and `/resume` are intentionally excluded — don't remove that filter without confirming
 
 ## Tailwind CSS v4
@@ -61,7 +64,7 @@ public/
 
 ## Cloudflare Pages
 
-- `public/_redirects` — normalizes trailing slashes on `/work`, `/about`, `/resume`, and falls back to `/404.html`
+- `public/_redirects` — 301s `www.mattsteele.dev` → apex, normalizes trailing slashes on `/work`, `/about`, `/resume`, and falls back to `/404.html`
 - `public/_headers` — security headers and cache rules applied to all routes
 - HTML served with `Cache-Control: public, max-age=0, must-revalidate` so deployments propagate immediately
 - Versioned/static assets (`/_astro/*`, fonts, images, css, js) served with `Cache-Control: public, max-age=31536000, immutable`; favicons/manifest with a shorter 1-day cache
@@ -69,4 +72,32 @@ public/
 
 ## Content Security Policy
 
-The CSP in `public/_headers` currently allows `'unsafe-inline'` in `script-src`. This is required because `BaseLayout.astro` has two `is:inline` scripts (theme init, and a GA `define:vars` page-view tracker) — moving to hash-based CSP (like SHA-256 pinning) would require regenerating hashes on every edit to those scripts, and `define:vars` output isn't static across builds. Don't remove `'unsafe-inline'` without replacing both inline scripts with an SSR-nonce approach or externalizing them, and confirming with the maintainer first — static output has no server to inject nonces per-request.
+The CSP in `public/_headers` uses SHA-256 hashes for inline scripts instead of `'unsafe-inline'`.
+
+There are five inline scripts in the built HTML that need a pinned hash (scripts with a `src` attribute, like the GA loader and Astro's bundled `ClientRouter`/page chunks, don't need one — they're covered by the `'self'`/host allowlist instead):
+
+1. **Theme detection** (`is:inline` in `BaseLayout.astro`) — static content, hash only changes if that script block is edited
+2. **GA page-view tracker** (`is:inline` in `BaseLayout.astro`) — static content (no `define:vars`)
+3. **GA config script** (`is:inline` in `MainHead.astro`) — reads the measurement ID from a `<meta name="ga-measurement-id">` tag at runtime instead of via `define:vars`, so its literal script text — and hash — stays constant regardless of the `PUBLIC_GA_ID` value
+4. **JSON-LD** (`is:inline type="application/ld+json"` in `MainHead.astro`) — static content
+5. **Bundled `ThemeToggle` module script** (inlined by Vite) — hash changes whenever `ThemeToggle.astro` is modified
+
+Avoid `define:vars` on any script that needs a hash — it bakes the interpolated value into the script's literal text, which either breaks the hash across environments (if the value differs) or, worse, silently ships an unused variable (this happened to the GA page-view tracker, which declared `gaId` via `define:vars` but never referenced it in the script body). Prefer passing data via a `<meta>` tag read at runtime instead.
+
+After adding/editing an inline script, regenerate the hashes:
+
+```sh
+npm run build
+node -e "
+const fs = require('fs'), crypto = require('crypto');
+const html = fs.readFileSync('dist/index.html', 'utf8');
+[...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)].forEach(m => {
+  const attrs = m[1].trim();
+  if (attrs.includes('src=') || m[2].trim() === '') return;
+  const hash = crypto.createHash('sha256').update(m[2], 'utf8').digest('base64');
+  console.log(attrs || '(inline)', '=>', 'sha256-' + hash);
+});
+"
+```
+
+Then update the `script-src` directive in `public/_headers` with the new hashes. Verify hashes are identical across a clean rebuild (`rm -rf dist && npm run build`) before trusting them — a script whose content varies per build (timestamps, env-dependent values) can't be hashed reliably.

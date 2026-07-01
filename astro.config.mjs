@@ -7,10 +7,16 @@ export default defineConfig({
   trailingSlash: 'always',
   prefetch: true,
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      cssMinify: 'lightningcss'
+    }
   },
   compressHTML: true,
-  site: 'https://www.mattsteele.dev',
+  site: 'https://mattsteele.dev',
+  build: {
+    inlineStylesheets: 'auto'
+  },
   integrations: [sitemap({
     filter: (page) => !page.includes('/work') && !page.includes('/resume'),
   })],

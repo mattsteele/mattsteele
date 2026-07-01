@@ -28,13 +28,14 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 <link rel="preconnect" href="https://www.google-analytics.com" />
 
 <!-- Google tag (gtag.js) -->
+<meta name="ga-measurement-id" content={gaId} />
 <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-<script is:inline define:vars={{ gaId }}>
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', gaId, { send_page_view: false });
+  gtag('config', document.querySelector('meta[name="ga-measurement-id"]').content, { send_page_view: false });
 </script>
 
 <!-- Open Graph -->
@@ -42,20 +43,20 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="https://www.mattsteele.dev/android-chrome-512x512.png" />
+<meta property="og:image" content="https://mattsteele.dev/android-chrome-512x512.png" />
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content="https://www.mattsteele.dev/android-chrome-512x512.png" />
+<meta name="twitter:image" content="https://mattsteele.dev/android-chrome-512x512.png" />
 
 <!-- JSON-LD -->
 <script is:inline type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Matt Steele",
-  "url": "https://www.mattsteele.dev",
+  "url": "https://mattsteele.dev",
   "jobTitle": "Senior Software Engineer",
   "description": "Senior Software Engineer specializing in Developer Experience, design systems, and scalable web applications.",
   "address": {

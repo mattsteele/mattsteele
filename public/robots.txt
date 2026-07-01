@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /resume/
 Disallow: /work/
 
-Sitemap: https://www.mattsteele.dev/sitemap-index.xml
+Sitemap: https://mattsteele.dev/sitemap-index.xml

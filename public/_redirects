@@ -1,3 +1,6 @@
+# Redirect www to non-www
+https://www.mattsteele.dev/* https://mattsteele.dev/:splat 301!
+
 # Redirect trailing slashes
 /work /work/ 301
 /about /about/ 301
