@@ -1,7 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
-import { getPublishedWork } from "../utils/work";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PortfolioPreview from "@/components/PortfolioPreview.astro";
+import { getPublishedWork } from "@/utils/work";
 
 const projects = await getPublishedWork();
 projects.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
