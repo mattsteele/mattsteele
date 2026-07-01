@@ -23,8 +23,13 @@ import mattSteeleSignature from "@/assets/images/mattsteele-signature.png";
 					class="absolute right-0 bottom-0"
 					src={mattSteeleIllustrated}
 					alt="Illustration of Matt Steele"
-					width="326"
-					height="326"
+					width={326}
+					height={326}
+					densities={[1, 2]}
+					format="webp"
+					quality={85}
+					loading="eager"
+					fetchpriority="high"
 				/>
 			</div>
 
@@ -54,8 +59,11 @@ import mattSteeleSignature from "@/assets/images/mattsteele-signature.png";
 						class="mb-4 dark:invert"
 						src={mattSteeleSignature}
 						alt="Matt Steele's Signature"
-						width="100"
-						height="33"
+						width={100}
+						height={33}
+						densities={[1, 2]}
+						format="webp"
+						quality={85}
 					/>
 					<p class="mt-1 text-lg tracking-wide uppercase">Matt Steele</p>
 				</div>
