@@ -12,9 +12,7 @@ import PrintIcon from "@/assets/svgs/print.svg";
 >
 	<div class="flex dark:text-white">
 		<!-- Sidebar -->
-		<aside
-			class="hidden w-1/5 bg-gray-500 p-6 md:block dark:bg-gray-700 print:hidden"
-		>
+		<aside class="hidden w-1/5 bg-gray-500 p-6 md:block dark:bg-gray-700 print:hidden">
 			<div class="flex justify-end pt-4 pr-6">
 				<button
 					id="print-resume"
@@ -39,12 +37,13 @@ import PrintIcon from "@/assets/svgs/print.svg";
 						<h1 class="text-5xl font-bold print:text-black">Matt Steele</h1>
 						<p class="mt-2 text-xl">
 							<span>Senior Software Engineer</span>
-							<span class="mx-2" aria-hidden="true"> | </span>
+							<span class="mx-2" aria-hidden="true">
+								{" "}
+								|{" "}
+							</span>
 							<span>Denver, CO</span>
 						</p>
-						<div
-							class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 print:pt-0"
-						>
+						<div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4 print:pt-0">
 							<a
 								href="mailto:mattsteele@outlook.com"
 								class="flex items-center hover:underline"
@@ -89,7 +88,9 @@ import PrintIcon from "@/assets/svgs/print.svg";
 					<article class="mb-10">
 						<div class="mb-4">
 							<p class="mb-1 tracking-wider text-gray-500 dark:text-white">
-								<time class="text-sm" datetime="2020-10-01">10/2020</time>
+								<time class="text-sm" datetime="2020-10-01">
+									10/2020
+								</time>
 								<span class="mx-1 text-sm uppercase" aria-hidden="true">
 									-
 								</span>
@@ -104,9 +105,13 @@ import PrintIcon from "@/assets/svgs/print.svg";
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
-									>Charter Communications</a
 								>
-								<span class="mx-1" aria-hidden="true"> | </span>
+									Charter Communications
+								</a>
+								<span class="mx-1" aria-hidden="true">
+									{" "}
+									|{" "}
+								</span>
 								<span>Denver, CO</span>
 							</p>
 						</div>
@@ -138,11 +143,15 @@ import PrintIcon from "@/assets/svgs/print.svg";
 					<article class="mb-10">
 						<div class="mb-4">
 							<p class="mb-1 tracking-wider text-gray-500 dark:text-white">
-								<time class="text-sm" datetime="2017-10-01">10/2017</time>
+								<time class="text-sm" datetime="2017-10-01">
+									10/2017
+								</time>
 								<span class="mx-1 text-sm uppercase" aria-hidden="true">
 									-
 								</span>
-								<time class="text-sm" datetime="2020-10-01">10/2020</time>
+								<time class="text-sm" datetime="2020-10-01">
+									10/2020
+								</time>
 							</p>
 							<h3 class="pb-1 text-2xl font-semibold">
 								Senior Software Engineer - Prototyping
@@ -153,9 +162,13 @@ import PrintIcon from "@/assets/svgs/print.svg";
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
-									>Charter Communications</a
 								>
-								<span class="mx-1" aria-hidden="true"> | </span>
+									Charter Communications
+								</a>
+								<span class="mx-1" aria-hidden="true">
+									{" "}
+									|{" "}
+								</span>
 								<span>Denver, CO</span>
 							</p>
 						</div>
@@ -182,9 +195,16 @@ import PrintIcon from "@/assets/svgs/print.svg";
 					<article class="mb-10">
 						<div class="mb-4">
 							<p class="mb-1 tracking-wider text-gray-500 dark:text-white">
-								<time class="text-sm" datetime="2016-05-01">05/2016</time>
-								<span class="mx-1 text-sm" aria-hidden="true"> - </span>
-								<time class="text-sm" datetime="2017-10-01">10/2017</time>
+								<time class="text-sm" datetime="2016-05-01">
+									05/2016
+								</time>
+								<span class="mx-1 text-sm" aria-hidden="true">
+									{" "}
+									-{" "}
+								</span>
+								<time class="text-sm" datetime="2017-10-01">
+									10/2017
+								</time>
 							</p>
 							<h3 class="pb-1 text-2xl font-semibold">Senior Web Developer</h3>
 							<p class="text-sm dark:text-white">
@@ -193,9 +213,13 @@ import PrintIcon from "@/assets/svgs/print.svg";
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
-									>Clover Partners</a
 								>
-								<span class="mx-1" aria-hidden="true"> | </span>
+									Clover Partners
+								</a>
+								<span class="mx-1" aria-hidden="true">
+									{" "}
+									|{" "}
+								</span>
 								<span>Denver, CO</span>
 							</p>
 						</div>
@@ -233,9 +257,13 @@ import PrintIcon from "@/assets/svgs/print.svg";
 									target="_blank"
 									rel="noopener noreferrer"
 									class="text-gray-800 hover:underline dark:text-white"
-									>Academy of Art University</a
 								>
-								<span class="mx-1" aria-hidden="true"> | </span>
+									Academy of Art University
+								</a>
+								<span class="mx-1" aria-hidden="true">
+									{" "}
+									|{" "}
+								</span>
 								<span>San Francisco, CA</span>
 							</p>
 						</div>
@@ -263,12 +291,11 @@ import PrintIcon from "@/assets/svgs/print.svg";
 			</main>
 			<footer class="bg-gray-600 p-10 dark:bg-gray-800">
 				<p class="text-white">
-					Last updated: {
-						new Date().toLocaleDateString(undefined, {
-							month: "numeric",
-							year: "numeric",
-						})
-					}
+					Last updated:{" "}
+					{new Date().toLocaleDateString(undefined, {
+						month: "numeric",
+						year: "numeric",
+					})}
 				</p>
 			</footer>
 		</div>

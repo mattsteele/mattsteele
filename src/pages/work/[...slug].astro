@@ -29,9 +29,7 @@ const { Content } = await render(entry);
 >
 	<main class="mx-6 my-12 flex-1 md:my-24">
 		<div class="flex flex-col items-center">
-			<h1
-				class="my-4 text-center text-xl font-black md:my-9 md:text-4xl dark:text-white"
-			>
+			<h1 class="my-4 text-center text-xl font-black md:my-9 md:text-4xl dark:text-white">
 				{entry.data.title}
 			</h1>
 			<Image
@@ -46,50 +44,46 @@ const { Content } = await render(entry);
 				fetchpriority="high"
 			/>
 
-			<div
-				class="max-w-251.5 [&_h3]:text-2xl [&_ul]:list-inside [&_ul]:list-disc"
-			>
+			<div class="max-w-251.5 [&_h3]:text-2xl [&_ul]:list-inside [&_ul]:list-disc">
 				<div class="*:py-2 *:text-xl">
 					<Content />
 				</div>
 
 				<h2 class="mt-5 text-xl font-medium">Project Involvement:</h2>
 				<div class="my-5 flex flex-wrap gap-4">
-					{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+					{entry.data.tags.map((t) => (
+						<Pill>{t}</Pill>
+					))}
 				</div>
-				{
-					entry.data.external_site_link && (
+				{entry.data.external_site_link && (
+					<a
+						class="btn-gradient my-8 flex max-w-40 justify-center rounded-lg bg-gray-600 px-6 py-4 text-xl text-white uppercase dark:bg-gray-500"
+						rel="noopener noreferrer"
+						href={entry.data.external_site_link}
+						target="_blank"
+					>
+						<span class="mr-1">Visit Site</span>
+
+						<ExternalLinkIcon
+							width="14px"
+							height="14px"
+							class="mt-0.75 fill-current"
+						/>
+					</a>
+				)}
+				{entry.data.work_with_company_url && (
+					<p>
+						Work done with
 						<a
-							class="btn-gradient my-8 flex max-w-40 justify-center rounded-lg bg-gray-600 px-6 py-4 text-xl text-white uppercase dark:bg-gray-500"
+							class="border-b-2 border-dashed border-rose-700 hover:bg-rose-200 dark:border-gray-300 dark:hover:bg-gray-500"
 							rel="noopener noreferrer"
-							href={entry.data.external_site_link}
+							href={entry.data.work_with_company_url}
 							target="_blank"
 						>
-							<span class="mr-1">Visit Site</span>
-
-							<ExternalLinkIcon
-								width="14px"
-								height="14px"
-								class="mt-0.75 fill-current"
-							/>
+							{entry.data.work_with_company_name}
 						</a>
-					)
-				}
-				{
-					entry.data.work_with_company_url && (
-						<p>
-							Work done with
-							<a
-								class="border-b-2 border-dashed border-rose-700 hover:bg-rose-200 dark:border-gray-300 dark:hover:bg-gray-500"
-								rel="noopener noreferrer"
-								href={entry.data.work_with_company_url}
-								target="_blank"
-							>
-								{entry.data.work_with_company_name}
-							</a>
-						</p>
-					)
-				}
+					</p>
+				)}
 			</div>
 		</div>
 	</main>

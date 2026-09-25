@@ -48,30 +48,28 @@ const links = [
 ---
 
 <footer class="flex w-full flex-col print:hidden">
-	{
-		links.map(({ label, href, bg, underline, external, iconSize }) => (
-			<div class={`${bg} relative`}>
-				<a
-					class="group flex w-full items-center justify-center py-2 text-white uppercase no-underline"
-					href={href}
-					target={external ? "_blank" : undefined}
-					rel={external ? "noopener noreferrer" : undefined}
-				>
-					{label}
-					{external && (
-						<ExternalLinkIcon
-							class="max-w-3 pb-1"
-							width={iconSize}
-							height={iconSize}
-							fill="white"
-							aria-hidden="true"
-						/>
-					)}
-					<span
-						class={`${underline} absolute bottom-0 left-0 block h-1 w-0 transition-[width] duration-400 group-hover:w-full`}
+	{links.map(({ label, href, bg, underline, external, iconSize }) => (
+		<div class={`${bg} relative`}>
+			<a
+				class="group flex w-full items-center justify-center py-2 text-white uppercase no-underline"
+				href={href}
+				target={external ? "_blank" : undefined}
+				rel={external ? "noopener noreferrer" : undefined}
+			>
+				{label}
+				{external && (
+					<ExternalLinkIcon
+						class="max-w-3 pb-1"
+						width={iconSize}
+						height={iconSize}
+						fill="white"
+						aria-hidden="true"
 					/>
-				</a>
-			</div>
-		))
-	}
+				)}
+				<span
+					class={`${underline} absolute bottom-0 left-0 block h-1 w-0 transition-[width] duration-400 group-hover:w-full`}
+				/>
+			</a>
+		</div>
+	))}
 </footer>
