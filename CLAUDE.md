@@ -1,4 +1,4 @@
-# mattsteele.dev — Project Steering
+# mattsteele — Project Steering
 
 ## Stack
 
