@@ -64,7 +64,7 @@ public/
 
 ## Cloudflare Pages
 
-- `public/_redirects` — 301s `www.mattsteele.dev` → apex, normalizes trailing slashes on `/work`, `/about`, `/resume`, and falls back to `/404.html`
+- `public/_redirects` — 301s `www.mattsteele.dev` → apex, normalizes trailing slashes on `/work`, `/about`, `/resume`. No explicit 404 rule needed — Cloudflare Pages automatically serves `404.html` for any unmatched path (confirmed via `wrangler pages dev`; an explicit `/* /404.html 404` rule is redundant and `wrangler` flags it as invalid anyway)
 - `public/_headers` — security headers and cache rules applied to all routes
 - HTML served with `Cache-Control: public, max-age=0, must-revalidate` so deployments propagate immediately
 - Versioned/static assets (`/_astro/*`, fonts, images, css, js) served with `Cache-Control: public, max-age=31536000, immutable`; favicons/manifest with a shorter 1-day cache
