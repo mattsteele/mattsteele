@@ -14,15 +14,15 @@
 		"format:check": "prettier --check ."
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.11",
+		"@astrojs/check": "^0.9.12",
 		"@astrojs/sitemap": "^3.7.4",
 		"@tailwindcss/vite": "^4.3.3",
-		"astro": "^7.4.1",
+		"astro": "^7.4.2",
 		"eslint": "^10.13.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-astro": "^3.1.0",
 		"prettier": "^3.9.10",
-		"prettier-plugin-astro": "^1.1.1",
+		"prettier-plugin-astro": "^1.1.2",
 		"prettier-plugin-tailwindcss": "^0.8.1",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^6.0.3",
