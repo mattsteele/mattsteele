@@ -17,8 +17,8 @@
 		"@astrojs/check": "^0.9.12",
 		"@astrojs/sitemap": "^3.7.4",
 		"@tailwindcss/vite": "^4.3.3",
-		"astro": "^7.4.2",
-		"eslint": "^10.13.0",
+		"astro": "^7.4.4",
+		"eslint": "^10.14.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-astro": "^3.1.0",
 		"prettier": "^3.9.10",
@@ -32,5 +32,8 @@
 		"fsevents@2.3.3": true,
 		"sharp@0.35.4": true,
 		"esbuild@0.28.1": true
+	},
+	"overrides": {
+		"minimatch": "^11.0.1"
 	}
 }
