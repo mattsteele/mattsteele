@@ -30,8 +30,7 @@
 	},
 	"allowScripts": {
 		"fsevents@2.3.3": true,
-		"sharp@0.35.5": true,
-		"esbuild@0.28.1": true
+		"sharp@0.35.5": true
 	},
 	"overrides": {
 		"minimatch": "^11.0.1"
