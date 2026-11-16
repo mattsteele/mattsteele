@@ -22,8 +22,8 @@
 		to left,
 		transparent,
 		transparent 50%,
-		theme(colors.rose.600) 50%,
-		theme(colors.rose.600)
+		var(--color-rose-600) 50%,
+		var(--color-rose-600)
 	);
 	background-position: 99% 0;
 	background-size: 205% 100%;
@@ -38,13 +38,13 @@
 			to left,
 			transparent,
 			transparent 50%,
-			theme(colors.gray.300) 50%,
-			theme(colors.gray.300)
+			var(--color-gray-300) 50%,
+			var(--color-gray-300)
 		);
 	}
 
 	:where(.dark, .dark *) &:hover {
-		color: theme(colors.gray.800);
+		color: var(--color-gray-800);
 	}
 }
 

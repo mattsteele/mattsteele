@@ -74,29 +74,43 @@ public/
 
 The CSP in `public/_headers` uses SHA-256 hashes for inline scripts instead of `'unsafe-inline'`.
 
-There are five inline scripts in the built HTML that need a pinned hash (scripts with a `src` attribute, like the GA loader and Astro's bundled `ClientRouter`/page chunks, don't need one — they're covered by the `'self'`/host allowlist instead):
+There are six inline scripts across the built HTML that need a pinned hash (scripts with a `src` attribute, like the GA loader and Astro's bundled `ClientRouter`/page chunks, don't need one — they're covered by the `'self'`/host allowlist instead). Hash extraction must scan every built page, not just `index.html` — the print-resume script only exists on `/resume/`:
 
 1. **Theme detection** (`is:inline` in `BaseLayout.astro`) — static content, hash only changes if that script block is edited
 2. **GA page-view tracker** (`is:inline` in `BaseLayout.astro`) — static content (no `define:vars`)
 3. **GA config script** (`is:inline` in `MainHead.astro`) — reads the measurement ID from a `<meta name="ga-measurement-id">` tag at runtime instead of via `define:vars`, so its literal script text — and hash — stays constant regardless of the `PUBLIC_GA_ID` value
 4. **JSON-LD** (`is:inline type="application/ld+json"` in `MainHead.astro`) — static content
-5. **Bundled `ThemeToggle` module script** (inlined by Vite) — hash changes whenever `ThemeToggle.astro` is modified
+5. **Bundled `ThemeToggle` module script** (inlined by Vite) — hash changes whenever `ThemeToggle.astro` or `src/utils/theme.ts` is modified
+6. **Print-resume button** (`is:inline` in `resume.astro`) — only present on `/resume/`, static content
 
 Avoid `define:vars` on any script that needs a hash — it bakes the interpolated value into the script's literal text, which either breaks the hash across environments (if the value differs) or, worse, silently ships an unused variable (this happened to the GA page-view tracker, which declared `gaId` via `define:vars` but never referenced it in the script body). Prefer passing data via a `<meta>` tag read at runtime instead.
 
-After adding/editing an inline script, regenerate the hashes:
+After adding/editing an inline script, regenerate the hashes. Scan every built page, not just `index.html` — the print-resume script only exists on `/resume/`:
 
 ```sh
 npm run build
 node -e "
-const fs = require('fs'), crypto = require('crypto');
-const html = fs.readFileSync('dist/index.html', 'utf8');
-[...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)].forEach(m => {
-  const attrs = m[1].trim();
-  if (attrs.includes('src=') || m[2].trim() === '') return;
-  const hash = crypto.createHash('sha256').update(m[2], 'utf8').digest('base64');
-  console.log(attrs || '(inline)', '=>', 'sha256-' + hash);
-});
+const fs = require('fs'), crypto = require('crypto'), path = require('path');
+function walk(dir) {
+  let out = [];
+  for (const f of fs.readdirSync(dir)) {
+    const p = path.join(dir, f);
+    if (fs.statSync(p).isDirectory()) out = out.concat(walk(p));
+    else if (f.endsWith('.html')) out.push(p);
+  }
+  return out;
+}
+const hashes = new Set();
+for (const file of walk('dist')) {
+  const html = fs.readFileSync(file, 'utf8');
+  for (const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
+    const attrs = m[1].trim();
+    if (attrs.includes('src=') || m[2].trim() === '') continue;
+    const hash = crypto.createHash('sha256').update(m[2], 'utf8').digest('base64');
+    hashes.add('sha256-' + hash);
+  }
+}
+console.log([...hashes].sort().join('\n'));
 "
 ```
 
