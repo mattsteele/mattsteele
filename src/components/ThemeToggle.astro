@@ -20,28 +20,20 @@ import MoonStars from "@/assets/svgs/moon-stars.svg";
 </theme-toggle>
 
 <script>
+	import { applyTheme } from "@/utils/theme";
+
 	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
 			const button = this.querySelector("button");
+			if (!button) return;
 
-			const applyTheme = (theme: string) => {
-				document.documentElement.classList.remove("dark", "light");
-				document.documentElement.classList.add(theme);
-				document.documentElement.setAttribute("data-theme", theme);
-				localStorage.setItem("theme", theme);
-			};
-
-			if (button) {
-				button.addEventListener("click", () => {
-					const currentTheme = document.documentElement.classList.contains(
-						"dark",
-					)
-						? "dark"
-						: "light";
-					applyTheme(currentTheme === "dark" ? "light" : "dark");
-				});
-			}
+			button.addEventListener("click", () => {
+				const currentTheme = document.documentElement.classList.contains("dark")
+					? "dark"
+					: "light";
+				applyTheme(currentTheme === "dark" ? "light" : "dark");
+			});
 		}
 	}
 

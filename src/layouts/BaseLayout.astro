@@ -19,8 +19,14 @@ const { title, description, noindex } = Astro.props;
 		<ClientRouter />
 		<script is:inline>
 			function applyStoredTheme() {
+				let stored = null;
+				try {
+					stored = localStorage.getItem("theme");
+				} catch {
+					// localStorage not available
+				}
 				const theme =
-					localStorage.getItem("theme") ||
+					stored ||
 					(window.matchMedia("(prefers-color-scheme: dark)").matches
 						? "dark"
 						: "light");
