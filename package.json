@@ -15,9 +15,9 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.12",
-		"@astrojs/sitemap": "^3.7.5",
+		"@astrojs/sitemap": "^3.7.6",
 		"@tailwindcss/vite": "^4.3.5",
-		"astro": "^7.4.12",
+		"astro": "^7.4.13",
 		"eslint": "^10.15.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-astro": "^3.1.0",
